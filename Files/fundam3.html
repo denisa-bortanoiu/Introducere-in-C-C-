@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Divizorii unui num&abreve;r</title>
+<link rel="stylesheet" type="text/css" href="css/fundam.css">
+</head>
+
+<body>
+
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center">Algoritmi fundamentali</h1>
+	<ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="fundam1.html">Operarea pe cifre</a></li>
+		<li><a href="fundam3.html"><b>Divizorii unui num&abreve;r</b></a></li>
+		<li><a href="fundam2.html">C.m.m.d.c.</a></li>
+		<li><a href="fundam4.html">Exerci&tcedil;ii</a></li>
+	</ul></div>
+	<ul id="menu2">
+		<li><a href="#div">Divizori proprii &scedil;i improprii</a></li>
+		<li><a href="#dmin">Cel mai mic divizor propriu</a></li>
+		<li><a href="#prim">Primalitate</a></li>
+		<li><a href="#desc">Descompunere &icirc;n factori primi</a></li>
+	</ul>
+</div></div>
+
+<div id="text">
+	<br/><a name="div"><b>Divizori proprii &scedil;i improprii</b></a>
+	<br/>Fie <b>x</b> un num&abreve;r natural nenul. 
+	<br/>Dac&abreve; <b>x%a=0</b>(unde <b>a</b> este un num&abreve;r natural nenul), atunci <b>a</b> se nume&scedil;te <b>divizor</b> al lui <b>x</b>.
+	<br/>Dac&abreve; <b>x=1</b>, atunci el are un <i>singur divizor</i> (pe el &icirc;nsu&scedil;i).
+	<br/>Dac&abreve; <b>x>1</b>, atunci el are cu siguran&tcedil;a cel pu&tcedil;in 2 divizori: 1 &scedil;i x. Acestia se numesc <b>divizori improprii</b>. 
+	<br/>Orice alti divizori ai lui <b>x</b> se numesc <b>divizori proprii</b>. Dac&abreve; <b>d</b> este divizor propriu al lui <b>x</b>, atunci 
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>d&isin;{2, 3, ..., x/2}</b>.
+	<p><b>Aplica&tcedil;ie</b>
+	<br/>S&abreve; se afi&scedil;eze to&tcedil;i divizorii proprii ai num&abreve;rului natural nenul n citit de la tastatur&abreve; (n&le;1000).
+	<br/><b>Exemplu</b>: pentru n=24 se va afi&scedil;a 2 3 4 6 8 12
+	<div id="code">
+	#include&lt;iostream.h>
+	<br/>int main () {
+	<br/>&nbsp;&nbsp;&nbsp;int n, d, nr;
+	<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+	<br/>&nbsp;&nbsp;&nbsp;nr=0;
+	<br/>&nbsp;&nbsp;&nbsp;//<i>nr are semnifica&tcedil;ia unui contor, num&abreve;r&abreve; c&acirc;&tcedil;i divizori proprii are num&abreve;rul n. Dac&abreve; nr ramane 0 atunci n nu are divizori proprii</i>
+	<br/>&nbsp;&nbsp;&nbsp;for (d=2; d<=n/2; d++)
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (x%d==0) {
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;d&lt;&lt;' ';
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nr++; }
+	<br/>&nbsp;&nbsp;&nbsp;if (nr==0) cout&lt;&lt;"num&abreve;rul nu are divizori proprii";
+	<br/>return 0; }
+	</div></p><br/>
+	<a name="dmin"><b>Cel mai mic divizor propriu</b></a>
+	<br/><b>Cel mai mic divizor propriu</b>(d<sub>min</sub>) al lui <b>x</b> apar&tcedil;ine mul&tcedil;imii {2, 3, ... &radic;x}. Fiind cel mai mic divizor propriu, acesta este &scedil;i <i>prim</i>.
+	<br/><b>Cel mai mare divizor propriu</b> al lui <b>x</b> este dat de formula: <b>x/d<sub>min</sub></b>.
+	<p><b>Aplica&tcedil;ie</b>
+	<br/>S&abreve; se afi&scedil;eze cel mai mic &scedil;i cel mai mare divizor propriu al num&abreve;rului natural nenul n citit de la tastatur&abreve; (n&le;1000).
+	<br/><b>Exemplu</b>: pentru n=21 se va afi&scedil;a 3
+	<div id="code">
+	#include&lt;iostream.h>
+	<br/>#include&lt;math.h>
+	<br/>int main () {
+	<br/>&nbsp;&nbsp;&nbsp;int n, d, r, ok;
+	<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+	<br/>&nbsp;&nbsp;&nbsp;r=sqrt(n);
+	<br/>&nbsp;&nbsp;&nbsp;ok=0; //<i>Dac&abreve; exist&abreve; divizor propriu, ok=1; altfel, ok=0;</i>
+	<br/>&nbsp;&nbsp;&nbsp;for (d=2; d<=r; d++)
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (x%d==0) {
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;d&lt;&lt;' ';
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; 
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok=1;}
+	<br/>&nbsp;&nbsp;&nbsp;if (ok==1) cout&lt;&lt;x/d;
+	<br/>&nbsp;&nbsp;&nbsp;else cout&lt;&lt;"num&abreve;rul nu are divizori proprii";
+	<br/>return 0; }
+	</div></p><br/>
+	<a name="prim"><b>Verificarea primalit&abreve;&tcedil;ii unui num&abreve;r</b></a>
+	<br/>Un num&abreve;r este <b>prim</b> dac&abreve; nu are divizori proprii. 
+	<br/>&Icirc;n implementare, caut&abreve;m un divizor propriu (d<sub>min</sub>&isin;{2, 3, ... &radic;x}). La g&abreve;sirea acestuia, oprim repeti&tcedil;ia, pentru c&abreve; num&abreve;rul nu
+	este prim &scedil;i semnaliz&abreve;m acest lucru printr-o variabil&abreve;.
+	<p><b>Aplica&tcedil;ie</b>
+	<br/>S&abreve; se verifice dac&abreve; num&abreve;rul natural nenul n citit de la tastatur&abreve; (n&le;1000) este prim.
+	<br/><b>Exemplu</b>: pentru n=21 se va afi&scedil;a "nu". pentru n=29 se va afisa "da".
+	<div id="code">
+	#include&lt;iostream.h>
+	<br/>#include&lt;math.h>
+	<br/>int main () {
+	<br/>&nbsp;&nbsp;&nbsp;int n, d, r, ok;
+	<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+	<br/>&nbsp;&nbsp;&nbsp;r=sqrt(n);
+	<br/>&nbsp;&nbsp;&nbsp;ok=1; //<i>Dac&abreve; n este prim, ok=1; altfel, ok=0; pornim de la ipoteza ca n este prim</i>
+	<br/>&nbsp;&nbsp;&nbsp;for (d=2; d<=r; d++)
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (x%d==0) {
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok=0;
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;}
+	<br/>&nbsp;&nbsp;&nbsp;if (ok==1) cout&lt;&lt;"da";
+	<br/>&nbsp;&nbsp;&nbsp;else cout&lt;&lt;"nu";
+	<br/>return 0; }
+	</div></p><br/>
+	<a name="desc"><b>Descompunerea unui num&abreve;r &icirc;n factori primi</b></a>
+	<br/>Orice num&abreve;r natural nenul &scedil;i diferit de 1 se poate scrie ca descompunere de factori primi:
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>n=f<sub>1</sub> <sup>p<sub>1</sub></sup> &#8729; f<sub>2</sub> <sup>p<sub>2</sub></sup> &#8729;...&#8729; f<sub>n</sub> <sup>p<sub>n</sub></sup></b>
+	<br/>unde <b>f<sub>1</sub>, f<sub>2</sub>, ...f<sub>n</sub></b> sunt divizorii primi ai num&abreve;rului <b>n</b>, 
+	<br/>iar <b>p<sub>1</sub>, p<sub>2</sub>, ...p<sub>n</sub></b> sunt puterile la care ace&scedil;tia se reg&abreve;sesc &icirc;n descompunerea num&abreve;rului.
+	<br/>Num&abreve;rul de divizori naturali ai unui num&abreve;r este 
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>(1+p<sub>1</sub>)&#8729;(1+p<sub>2</sub>)&#8729;(1+p<sub>3</sub>)&#8729;...&#8729;(1+p<sub>n</sub>)</b>
+	<p><b>Aplica&tcedil;ie</b>
+	<br/>S&abreve; se descompun&abreve; &icirc;n factori primi un num&abreve;rul natural nenul n citit de la tastatur&abreve; (n&le;1000). Se vor afi&scedil;a factorii primi, al&abreve;turi de puteri.
+	<br/><b>Exemplu</b>: pentru n=24 se va afisa 2^3 &nbsp; 3^1. (2<sup>3</sup> &#8729; 3=24)
+	<div id="code">
+	#include&lt;iostream.h>
+	<br>int main () {
+	<br/>&nbsp;&nbsp;&nbsp;int n, d, p;
+	<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+	<br/>&nbsp;&nbsp;&nbsp;d=2; //<i>posibil divizor al lui n</i>
+	<br/>&nbsp;&nbsp;&nbsp;while (n>1) {
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p=0; //<i>p este puterea cu care apare d &icirc;n descompunerea lui n</i>
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(n%d==0) {
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p++;
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/d; }
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (p>0) cout&lt;&lt;d&lt;&lt;'^'&lt;&lt;p&lt;&lt;' ';
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d++; }
+	<br/>return 0; }
+	</div></p><br/>
+</div>
+</body>
+
+</html>
+

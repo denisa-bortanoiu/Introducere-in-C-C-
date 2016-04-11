@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Exerci&tcedil;ii</title>
+<link rel="stylesheet" type="text/css" href="css/fisiere.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center"><a name="meniu"></a>Fi&scedil;iere in C++</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="fisiere.html">Fi&scedil;iere text &icirc;n C</a></li>
+		<li><a href="fisiere1.html">Fi&scedil;iere text &icirc;n C++</a></li>
+		<li><a href="fisiere2.html"><b>Exerci&tcedil;ii</b></a></li>
+	</ul>
+</div>
+</div>
+
+<div id="text">
+	<ol type="I">
+		<li>Alegeti varianta corect&abreve;:
+		<ol><br/>
+			<li>Este corect s&abreve; deschidem fi&scedil;ierul <i>date.txt</i> astfel:
+				<ol type="a">
+					<li><div id="code">ofstream f;</div></li>
+					<li><div id="code">fstream f;</div></li>
+					<li><div id="code">ofstream f("date.txt");</div></li>
+					<li><div id="code">ifstream f("date.txt");</div></li>
+				</ol>
+			</li><br/>
+			<li><i>f</i> deschide fi&scedil;ierul <i>date.txt</i> pentru scriere. Pentru a afi&scedil;a cu 2 zecimale valoarea re&tcedil;inuta &icirc;n x, variabila de tip float, se va scrie:
+				<ol type="a">
+					<li><div id="code">f&lt;&lt;x;</div></li>
+					<li><div id="code">f&lt;&lt;setprecision(3);</div></li>
+					<li><div id="code">f&lt;&lt;setprecision(3)&lt;&lt;x;</div></li>
+					<li><div id="code">f&lt;&lt;setw(3)&lt;&lt;x;</div></li>
+				</ol>
+			</li><br/>
+			<li>Ce declara&tcedil;ie are <i>f</i> pentru a deschide fi&scedil;ierul <i>date.txt</i> pentru ad&abreve;ugare?
+				<ol type="a">
+					<li><div id="code">ofstream f("date.txt");</div></li>
+					<li><div id="code">ifstream f("date.txt");</div></li>
+					<li><div id="code">fstream f("date.txt", ios::app);</div></li>
+					<li><div id="code">fstream f("date.txt", ios::out);</div></li>
+				</ol>
+			</li><br/>
+		</ol>
+		<li>Scrie&tcedil;i c&acirc;te un program C/C++ pentru rezolvarea pentru urm&abreve;toarelor probleme.
+		<ol>
+			<br/><li>Scrie&tcedil;i &icirc;n fi&scedil;ierul <i>unu.out</i> con&tcedil;inutul fi&scedil;ierului <i>unu.in</i> (acesta con&tcedil;ine numere reale).</li>
+			<br/><li>Ad&abreve;uga&tcedil;i &icirc;n fi&scedil;ierul <i>doi.out</i> toate numerele pare din fi&scedil;ierul <i>doi.in</i> (acesta con&tcedil;ine cel mult 1000 de numere &icirc;ntregi de maxim 4 cifre).</li>
+			<br/><li>Se cite&scedil;te de la tastatur&abreve; num&abreve;rul natural nenul n(&lt;20). Se cere s&abreve; se construiasc&abreve; fi&scedil;ierul <i>trei.out</i> astfel &icirc;nc&acirc;t acesta s&abreve; con&tcedil;in&abreve; pe prima linie 1, pe a doua linie 1 2, ...
+			pe a n-a linie 1 2 3 4 ... n.
+			<br/><b>Exemplu:</b> pentru n=5, fi&scedil;ierul <i>trei.out</i> va avea urm&abreve;torul con&tcedil;inut:
+			<br/>1
+			<br/>1 2
+			<br/>1 2 3
+			<br/>1 2 3 4 
+			<br/>1 2 3 4 5</li>
+			<br/><li>Fi&scedil;ierul <i>patru.in</i> con&tcedil;ine pe prima linie un num&abreve;r natural nenul n (de maxim 9 cifre) &scedil;i pe urm&abreve;toarea linie n numere reale, separate prin c&acirc;te un spa&tcedil;iu.
+			S&abreve; se scrie &icirc;n fi&scedil;ierul <i>patru.out</i>, separate printr-un spa&tcedil;iu, cel mai mare, respectiv cel mai mic num&abreve;r din fi&scedil;ierul <i>patru.in</i>.
+			<br/><b>Exemplu:</b> Dac&abreve; fi&scedil;ierul <i>patru.in</i> con&tcedil;ine:
+			<br/>&nbsp;&nbsp;&nbsp;8
+			<br/>&nbsp;&nbsp;&nbsp;2.3 -0.2 0 6 78.9 -10.71 56 45
+			<br/>Atunci fi&scedil;ierul <i>patru.out</i> va avea urm&abreve;torul con&tcedil;inut:
+			<br/>&nbsp;&nbsp;&nbsp;78.0 -10.71</li>
+			<br/><li>Fi&scedil;ierul <i>cinci.in</i> con&tcedil;ine cel mult 10000 de numere naturale (dintre care cel pu&tcedil;in dou&abreve; impare) cu cel mult 9 cifre fiecare. Numerele sunt separate prin
+			c&acirc;te un spa&tcedil;iu. Scrie&tcedil;i un program care determin&abreve; &scedil;i afi&scedil;eaz&abreve; pe ecran penultimul num&abreve;r impar din fi&scedil;ier, precum &scedil;i num&abreve;rul de ordine al acestuia.
+			<br/><b>Exemplu:</b> Dac&abreve; fi&scedil;ierul <i>cinci.in</i> con&tcedil;ine:
+			<br/>&nbsp;&nbsp;&nbsp;10 45 0 0 0 0 0 0 0 0 0 49 6 7 2
+			<br/>Atunci pe ecran se va afi&scedil;a 49 12</li>
+			<br/><li>Se cite&scedil;te de la tastatur&abreve; un num&abreve;r natural k (0&le;k&le;45). S&abreve; se determine &scedil;i s&abreve; se afi&scedil;eze pe ecran c&acirc;te numere din fi&scedil;ierul <i>sase.in</i> au suma cifrelor egal&abreve; cu k (fi&scedil;ierul con&tcedil;ine
+			cel mult 10000 de numere de maxim 9 cifre separate printr-un spatiu).</li>
+			<br/><li>Se cite&scedil;te de la tastatur&abreve; o cifr&abreve; k (0&le;k&le;9). S&abreve; se determine &scedil;i s&abreve; se scrie &icirc;n fi&scedil;ierul <i>sapte.out</i> primele k numere prime
+			din fi&scedil;ierul <i>sapte.in</i>(fisierul con&tcedil;ine cel mult 10000 de numere de maxim 4 cifre separate printr-un spa&tcedil;iu). Fi&scedil;ierul con&tcedil;ine cel pu&tcedil;in 9 numere prime.</li>
+			<br/><li>Fi&scedil;ierul <i>opt.in</i> con&tcedil;ine pe prima linie trei numere naturale nenule k(&lt;10), n &scedil;i m (&lt;100), separate printr-un spa&tcedil;iu. Pe a doua linie sunt n numere
+			reale, iar pe a treia linie m numere reale. S&abreve; se scrie &icirc;n fi&scedil;ierul <i>opt.out</i> numerele pe de a doua linie din fi&scedil;ierul <i>opt.in</i>, cu k-1 zecimale, iar
+			&icirc;n fi&scedil;ierul <i>opt.txt</i> numerele de pe a treia linie, cu k+1 zecimale.</li>
+		</li></ol>
+		<br/>
+	</ol>
+		
+	
+</div>
+
+</body>
+
+</html>
+

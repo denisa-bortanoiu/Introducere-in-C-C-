@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Fi&scedil;iere text &icirc;n C</title>
+<link rel="stylesheet" type="text/css" href="css/fisiere.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center"><a name="meniu"></a>Fi&scedil;iere</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="fisiere.html"><b>Fi&scedil;iere text &icirc;n C</b></a></li>
+		<li><a href="fisiere1.html">Fi&scedil;iere text &icirc;n C++</a></li>
+		<li><a href="fisiere2.html">Exerci&tcedil;ii</a></li>
+	</ul>
+	<ul id="menu2">
+		<li><a href="#decl">Declararea &scedil;i deschiderea fi&scedil;ierelor</a>
+		<li><a href="#inch">&Icirc;nchiderea fi&scedil;ierelor</a>
+		<li><a href="#cit">Citirea &scedil;i scrierea datelor &icirc;n fi&scedil;iere</a>
+	</ul>
+</div>
+</div>
+
+<div id="text">
+	<br/>Un <b>fişier</b> este o colecţie de date, fiind indicat printr-un nume şi o extensie. Numele este desp&abreve;rţit de extensie prin punct. Avantajul lucrului cu fi&scedil;iere este evident, datele rezultate în urma execuţiei unui 
+	program putând fi salvate. 
+	<br/>Limbajul C consider&abreve; c&abreve; orice fi&scedil;ier este o colec&tcedil;ie de octe&tcedil;i care vor fi interpreta&tcedil;i de program.
+	<br/><br/><a name="decl"><b>Declararea &scedil;i deschiderea fi&scedil;ierelor</b></a>
+	<br/><b>Sintax&abreve; general&abreve;</b>
+	<div id="code">FILE * fopen (const char * nume_fisier, const char * mod_deschidere);</div>
+	<br/>Func&tcedil;ia <i>fopen</i> returneaz&abreve; un pointer de fi&scedil;ier. Dac&abreve; fi&scedil;ierul indicat nu a putut fi deschis, pointerul va avea valoare NULL.
+	<br/><i>mod_deschidere</i> poate fi:
+	<ol>
+		<li>pentru citire: <b>"r"</b> - deschide un fi&scedil;ier existent. Pointerul pozi&tcedil;ie se afl&abreve; la &icirc;nceputul fi&scedil;ierului.</li>
+		<li>pentru scriere: <b>"w"</b> - deschide un fi&scedil;ier nou, ori suprascrie &icirc;n fi&scedil;ierul cu acela&scedil;i nume. Pointerul pozi&tcedil;ie se afl&abreve; la &icirc;nceputul fi&scedil;ierului.</li>
+		<li>pentru ad&abreve;ugare: <b>"a"</b> - dac&abreve; fi&scedil;ierul nu exist&abreve;, sistemul de operare &icirc;l creeaz&abreve;. pozi&tcedil;ie se afl&abreve; la sf&acirc;r&scedil;itul fi&scedil;ierului.</li>
+	</ol>
+	<b>Exemple:</b>
+	<ul>
+	<li><div id="code"> FILE f; <br/>f=fopen ("exercitiu.in", "r"); //se deschide fi&scedil;ierul <i>exercitiu.in</i> pentru citire</li>
+	<li><div id="code"> FILE f; <br/>f=fopen ("exercitiu.in", "w"); //se deschide fi&scedil;ierul <i>exercitiu.in</i> pentru scriere</li>
+	<li><div id="code"> FILE f; <br/>f=fopen ("exercitiu.in", "a"); //se deschide fi&scedil;ierul <i>exercitiu.in</i> pentru ad&abreve;ugare</li>
+	</ul>
+	<br/><a name="inch"><b>&Icirc;nchiderea fi&scedil;ierelor</b></a>
+	<br/>Pentru &icirc;nchidere, se utilizeaz&abreve; func&tcedil;ia cu sintaxa urm&abreve;toare:
+	<div id="code"> int fclose (FILE * pointer_fisier);</div>
+	<br/><b>Exemplu:</b> <div id="code">fclose(f); //unde f are oricare din declara&tcedil;iile de mai sus</div>
+	<br/>	
+	<a name="cit"><b>Citirea &scedil;i scrierea datelor din fi&scedil;iere</b></a>
+	<br/>Prelucrarea datelor din fi&scedil;iere se poate face caracter cu caracter sau linie cu linie sau cu format.
+	<ol>
+	<li><i>Prelucrarea caracter cu caracter</i>
+		<br/>Vor fi utilizate func&tcedil;iile:
+		<ol type="a">
+			<li><div id="code">int fgetc (FILE * pointer_fisier); // pentru citire</div></li>
+			<li><div id="code">int fputc (int c, FILE * pointer_fisier); //pentru afi&scedil;are</div></li>
+		</ol>
+		<br/>Este necesar&abreve; includerea fi&scedil;ierului antet <i>stdio.h</i>.
+		<br/><i>fgetc</i> returneaz&abreve; caracterul citit, dupa convertirea acestuia &icirc;ntr-un &icirc;ntreg f&abreve;r&abreve; semn.
+		<br/><i>fputc</i> returneaz&abreve; caracterul c. 
+		<br/>&Icirc;n caz de eroare (sau sf&acirc;r&scedil;it de fi&scedil;ier pentru <i>fgetc</i>), func&tcedil;iile vor returna EOF (End Of File).
+	</li><br/>
+	<li><i>Prelucrarea linie cu linie</i>
+		<br/>Vor fi utilizate func&tcedil;iile:
+		<ol type="a">
+			<li><div id="code">int fgets (char * sir, int n, FILE * pointer_fisier); // pentru citire</div></li>
+			<li><div id="code">int fputs (const char * sir, FILE * pointer_fisier); //pentru afi&scedil;are</div></li>
+		</ol>
+		<br/>Dup&abreve; citirea/scrierea unei linii de text, pointerul de pozi&tcedil;ie avanseaz&abreve; la &icirc;nceputul liniei urm&abreve;toare.
+		<br/>Func&tcedil;ia <i>fgets</i> cite&scedil;te datele din fi&scedil;ier &scedil;i le pune &icirc;n bufferul de caractere &scedil;ir. Citirea se va efectua p&acirc;n&abreve;
+		la n=-1 sau p&acirc;n&abreve; la primul caracter '\n' (linie nou&abreve;). Dac&abreve; citirea se efectueaz&abreve; cu succes, se va returna un pointer la &scedil;irul de caractere,
+		 altfel (dac&abreve; apare o eroare sau s-a ajuns la sf&acirc;r&scedil;it de fi&scedil;ier) func&tcedil;ia va returna NULL.
+		<br/>Func&tcedil;ia <i>fputs</i> scrie caracterele &icirc;n &scedil;ir p&acirc;n&abreve; la NULL. Dac&abreve; opera&tcedil;ia se &icirc;ncheie cu succes, func&tcedil;ia va returna o 
+		valoare pozitiv&abreve;, &icirc;n caz contrar va returna EOF.</li>
+	<br/><li><i>Prelucrarea cu format</i>
+		<br/>Pentru a citi sau a afi&scedil;a informa&tcedil;iile conform unui format, se utilizeaz&abreve; specificatorii de format de care dispun func&tcedil;iile <i>fscanf</i>
+		&scedil;i <i>fprintf</i>. Valorile acestora sunt cele cunoscute pentru <i>scanf</i> si <i>printf</i>. (vezi <a href="lbj3.html">aceast&abreve; lec&tcedil;ie</a>)
+		<br/><br/><b>Exemplu:</b>
+		<div id="code">FILE *f;
+		<br/>int n=20;
+		<br/>f=fopen("date.out", "w");
+		<br>fprintf (f, "valoarea lui n: %d", n);
+		<br>fclose (f); </div>
+	</li>
+	</ol>
+	
+</div>
+
+</body>
+
+</html>
+

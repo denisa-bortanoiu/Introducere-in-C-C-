@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Structura programului</title>
+<link rel="stylesheet" type="text/css" href="css/lbj.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center"><a name="meniu"></a>Limbajul de programare C/C++</h1>
+	<ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="lbj1.html">Date &scedil;i operatori</a></li>
+		<li><a href="lbj3.html"><b>Instruc&tcedil;iuni &scedil;i structuri</b></li>
+		<li><a href="lbj2.html">Structura programului</a></li>
+	</ul>
+	<ul id="menu2">
+		<li><a href="#cit">Citirea</a></li>
+		<li><a href="#scr">Scrierea</a></li>
+		<li><a href="#instr">Instruc&tcedil;iunea compus&abreve;</a></li>
+		<li><a href="#if">Structura alternativ&abreve;</a></li>
+		<li><a href="#rep">Structuri repetitive</a></li>
+	</ul>
+	</div>
+</div>
+
+<div id="text">
+	<br/><a name="cit"><b>Citirea datelor</b></a>
+	<br/>Citirea datelor de la tastatur&abreve;, <b><i>&icirc;n C++</i></b>, se poate face cu <b>cin</b>, al c&abreve;rei prototip se g&abreve;se&scedil;te &icirc;n fi&scedil;ierul <i>iostream.h</i>, inclus cu instruc&tcedil;iunea <i>#include&lt;iostream.h></i>.
+	<br/><b>Exemple de utilizare:</b>
+	<div id="code">
+	&nbsp;&nbsp;&nbsp;cin>>x; 
+	<br/>&nbsp;&nbsp;&nbsp;cin>>a>>b;
+	</div>
+	<br/>Observa&tcedil;ii: 
+	<ol>
+		<li>x, a, b sunt variabile deja declarate. </li>
+		<li><div id="code">cin>>a>>b; </div> este echivalent cu <div id="code"> cin>>a; cin>>b;</div></li>
+	</ol>
+	<br/><b><i>&Icirc;n C</i></b>, citirea datelor se face cu <b>scanf</b>, al c&abreve;rei prototip se g&abreve;se&scedil;te &icirc;n fi&scedil;ierul <i>stdio.h</i>.
+	<div id="code">int scanf (format, adr_var1, adr_var2, ...adr_varn);</div>
+	<br/>Func&tcedil;ia parcurge succesiunea de caractere introdus&abreve; de la tastatur&abreve; &scedil;i extrage valorile de citit conform formatului specificat. 
+	<br/>Valorile citite sunt memorate &icirc;n ordine &icirc;n variabilele specificate prin adresa lor. 
+	<br/>Adresa unei variabile se ob&tcedil;ine cu operatorul & care precede identificatorul unei variabile.
+	<br/>Func&tcedil;ia &icirc;ntoarce num&abreve;rul de valori citite corect.
+	<br/>Parametrul <i>format</i> con&tcedil;ine specificatori de format, caractere albe sau alte caractere (caracterele albe sunt ignorate, iar celelalte trebuie sa fie prezente la intrare in 
+	pozi&tcedil;iile corespunz&abreve;toare. De cele mai multe ori, pentru specificatorii de format se folose&scedil;te construc&tcedil;ia:
+	<div id="code">%litera_tip</div>
+	<br/>
+	<table>
+	<tr><th>litera_tip</th><th>semnifica&tcedil;ie</th></tr>
+	<tr><th>d</th><td>num&abreve;r &icirc;ntreg zecimal</td></tr>
+	<tr><th>o</th><td>num&abreve;r &icirc;ntreg octal</td></tr>
+	<tr><th>u</th><td>num&abreve;r &icirc;ntreg zecimal memorat &icirc;n variabil&abreve; de tip unsigned</td></tr>
+	<tr><th>x</th><td>num&abreve;r &icirc;ntreg hexazecimal</td></tr>
+	<tr><th>e, f sau g</th><td>num&abreve;r real zecimal</td></tr>
+	<tr><th>c</th><td>caracter (caracterele albe prezente la intrare nu se ignor&abreve;)</td></tr>
+	<tr><th>s</th><td>&scedil;ir de caractere (&scedil;irul &icirc;ncepe cu primul caracter care nu este alb &scedil;i se termin&abreve; la primul caracter alb sau la epuizarea dimensiunii lg)</td></tr>
+	</table>
+	Tipul valorii citite (&icirc;ntregi sau reale) poate fi schimbat preced&acirc;nd <b>litera_tip</b> cu <b>l/L</b>. <b>*</b> poate preceda <b>litera_tip</b>, caz &icirc;n care
+	valoarea de la intrare nu va fi atribuita niciuneia dintre variabilele specificate.
+	<br/><b>Exemple de utilizare:</b>
+	<div id="code">
+	<br/>&nbsp;&nbsp;&nbsp;int x; unsigned y; unsigned long z; double v; char w;
+	<br/>&nbsp;&nbsp;&nbsp;scanf ("%d%u%lu%lu%lf%c", &x, &y, &z, &v, &w);
+	<br/>&nbsp;&nbsp;&nbsp;// pentru valorile -2 100 50000 -4.35 a, variabilele x, y, z, v, w vor avea valorile -2, 100, 50000, -4.35, caracterul spatiu
+	<br/>&nbsp;&nbsp;&nbsp;scanf ("%d %u %lu %lu %lf %c", &x, &y, &z, &v, &w);
+	<br/>&nbsp;&nbsp;&nbsp;// pentru valorile -2 100 50000 -4.35 a, variabilele x, y, z, v, w vor avea valorile -2, 100, 50000, -4.35, 'a' (&icirc;n cadrul format&abreve;rii se precizeaz&abreve; spa&tcedil;iile)</div>
+	
+	<br/><a name="scr"><b>Scrierea</b></a>
+	<br/>Scrierea datelor pe ecran, <b><i>&icirc;n C++</i></b>, se poate face <b>cout</b>, al c&abreve;rei prototip se g&abreve;se&scedil;te &icirc;n fi&scedil;ierul <i>iostream.h</i>.
+	<br/><b>Exemple de utilizare:</b>
+	<div id="code">
+	&nbsp;&nbsp;&nbsp;cout&lt;&lt;x; 
+	<br/>&nbsp;&nbsp;&nbsp;cout&lt;&lt;a&lt;&lt;' '&lt;&lt;b;
+	<br/>&nbsp;&nbsp;&nbsp;cout&lt;&lt;"Nu exista";
+	</div>
+	<br/>Observa&tcedil;ii: 
+	<ol>
+		<li>x, a, b sunt variabile deja declarate. </li>
+		<li><div id="code">cout&lt;&lt;a&lt;&lt;' '&lt;&lt;b; </div> este echivalent cu <div id="code"> cout&lt;&lt;a; cout&lt;&lt;' '; cout&lt;&lt;b;</div></li>
+		<li>Caracterele se scriu &icirc;ntre apostrofuri ['], iar &scedil;irurile de caractere (mesaje) &icirc;ntre ghilimele ["].</li>
+	</ol>
+	<br/><b><i>&Icirc;n C</i></b>, scrierea datelor se poate face cu:
+	<div id="code">int printf (format, expresie1, expresie2, ..., expresien);</div>
+	<br/>Se evalueaz&abreve; expresiile &scedil;i se scriu &icirc;n ordine valorile acestora &icirc;n forma specificat&abreve; de parametrul format.
+	<br/>&Icirc;n caz de succes, func&tcedil;ia returneaz&abreve; num&abreve;rul de caractere afi&scedil;ate.
+	<br/>Parametrul <i>format</i> con&tcedil;ine specificatori de format &scedil;i alte caractere. Pentru fiecare expresie din list&abreve; trebuie s&abreve; existe un specificator de format.
+	Celelalte caractere vor fi afi&scedil;ate pe ecran &icirc;n pozi&tcedil;iile corespunz&abreve;toare.
+	<br/>Specificatorii de format au sintaxa:
+	<div id="code">%[&plusmn;][lg][.prec][#][l/L]litera_tip</div>
+	<br/>+ indic&abreve; afi&scedil;area semnului expresiei
+	<br/>- indic&abreve; aliniere la st&acirc;nga (implicit alinierea se faca la dreapta)
+	<br/>lg reprezint&abreve; num&abreve;rul minim de caractere pe care se realizeaz&abreve; afi&scedil;area
+	<br/>prec indic&abreve; num&abreve;rul de zecimale sau num&abreve;rul de caractere din &scedil;ir care se afi&scedil;eaz&abreve; 
+	<br/># indic&abreve; afi&scedil;area bazei num&abreve;rului
+	<table>
+	<tr><th>litera_tip</th><th>semnifica&tcedil;ie</th></tr>
+	<tr><th>d</th><td>expresia se converte&scedil;te din tipul int &scedil;i se afi&scedil;eaz&abreve; &icirc;n baza 10</td></tr>
+	<tr><th>o</th><td>expresia se converte&scedil;te din tipul int &scedil;i se afi&scedil;eaz&abreve; &icirc;n baza 8</td></tr>
+	<tr><th>u</th><td>expresia se converte&scedil;te din tipul unsigned int &scedil;i se afi&scedil;eaz&abreve; &icirc;n baza 10</td></tr>
+	<tr><th>x, X</th><td>expresia se converte&scedil;te din tipul int &scedil;i se afi&scedil;eaz&abreve; &icirc;n baza 16 (pentru x, literele pentru 10-15 sunt mici, iar pentru X sunt mari)</td></tr>
+	<tr><th>f</th><td>expresia se converte&scedil;te din tipul float &scedil;i se afi&scedil;eaz&abreve; parte_&icirc;ntreag&abreve;.parte_zecimal&abreve;</td></tr>
+	<tr><th>e, E</th><td>expresia se converte&scedil;te din tipul float &scedil;i se afi&scedil;eaz&abreve; &icirc;n format exponen&tcedil;ial parte_&icirc;ntreag&abreve;.parte_zecimal&abreve; &plusmn; exponent sau cu E</td></tr>
+	<tr><th>g</th><td>se aplic&abreve; una din conversiile corespunz&abreve;toare literei f sau e (cea care se reprezint&abreve; cu un num&abreve;r minim de caractere)</td></tr>
+	<tr><th>c</th><td>expresia are ca valoare codul ASCII al unui caracter &scedil;i se afi&scedil;eaz&abreve; caracterul corespunz&abreve;tor</td></tr>
+	<tr><th>s</th><td>expresia este un &scedil;ir de caractere care va fi afi&scedil;at pe ecran</td></tr>
+	</table>
+	<br/>d, o, u, x, X precedate de l determin&abreve; conversia din tipul long
+	<br/>e, E, f, g precedate de l determin&abreve; conversia din tipul double
+	<br/>e, E, f, g precedate de L determin&abreve; conversia din tipul long double
+	
+	<br/><br/><b>Exemple:</b>
+	<div id="code">char car='d'; double r=9.=8.7654321; int i=20, j;</div>
+	<br/><table>
+	<tr><th>Apeluri de func&tcedil;ie <i>printf</i></th><th>Linii afi&scedil;ate</th></tr>
+	<tr><td><div id="code">printf ("caracterul %c are codul ASCII %d", car, car);</div></td><td>caracterul d are codul ASCII 100</td></tr>
+	<tr><td><div id="code">printf ("%+lf*11.7lf\n%g*%le", r, r, r, r);</div></td><td>+98.765432* 98.7654321<br/>98.7654*9.876543e+001</td></tr>
+	<tr><td><div id="code">printf ("i=%d\n", i);<br/>j=2*i--;<br/>printf ("j=%d i=%d", j, i);</div></td><td>i=20<br/>j=40 i=19</td></tr>
+	</table>
+	
+	<br/><a name="instr"><b>Instruc&tcedil;iunea compus&abreve;</b></a>
+	<div id="code">
+	<br/>{
+	<br/>&nbsp;&nbsp;&nbsp;instruc&tcedil;iune<sub>1</sub>;
+	<br/>&nbsp;&nbsp;&nbsp;instruc&tcedil;iune<sub>2</sub>;
+	<br/>&nbsp;&nbsp;&nbsp;...
+	<br/>&nbsp;&nbsp;&nbsp;instruc&tcedil;iune<sub>n</sub>;
+	<br/>}</div>
+	<ul>
+		<li>Dup&abreve; cum se sugereaz&abreve; din nume, reprezint&abreve; un bloc de instruc&tcedil;iuni, care se execut&abreve; &icirc;n ordinea specificat&abreve;.</li>
+		<li>Fiecare instruc&tcedil;iune se termin&abreve; cu punct &scedil;i virgul&abreve; [;].</li>
+	</ul>
+	<br/><a name="if"><b>Structura alternativ&abreve;</b></a> (pentru mai multe informa&tcedil;ii, revezi <a href="struct2.html"><b>aceast&abreve; lec&tcedil;ie</b></a>)
+	<br/><br/><table>
+	<tr> <th>Pseudocod</th><th>Traducere &icirc;n C/C++</th></tr>
+	<tr>
+		<td><div id="code">
+		<b>&#9484;dac&abreve;</b> expresie_logic&abreve; <b>atunci</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni1
+		<br/>&#9474;<b>altfel</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni2
+		<br/>&#9492;&#8718;
+		</div></td>
+		<td><div id="code">
+		<b>if</b> (expresie_logic&abreve) <b> 
+		<br>&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni1
+		<br/><b>else</b>
+		<br>&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni2
+		</div></td>
+	</tr>
+	</table>
+	<br/>Observa&tcedil;ii: 
+	<ol>
+		<li>Dac&abreve; blocurile de instruc&tcedil;iuni con&tcedil;in mai multe comenzi, acestea vor fi &icirc;ncadrate &icirc;ntre acolade [{bloc_instruc&tcedil;iuni}].</li>
+		<li>Dac&abreve; blocurile de instruc&tcedil;iuni sunt reprezentate doar de o comand&abreve;, se poate renun&tcedil;a la acolade.</li>
+		<li>Fiecare instruc&tcedil;iune se termin&abreve; cu punct &scedil;i virgul&abreve; [;]!</li>
+	</ol>
+	<br/><a name="rep"><b>Structuri repetitive</b></a> (pentru mai multe informa&tcedil;ii, revezi <a href="struct3.html"><b>aceast&abreve; lec&tcedil;ie</b></a>)
+	<br/><br/><table>
+	<tr> <th>Pseudocod</th><th>Traducere &icirc;n C/C++</th></tr>
+	<tr>
+		<td><div id="code">
+		&#9484;<b>c&acirc;t timp</b> C <b>execut&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9492;&#8718;
+		</div></td>
+		<td><div id="code">
+		<b>while</b> (C) <b> 
+		<br>&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		</div></td>
+	</tr>
+	<tr>
+		<td><div id="code">
+		&#9484;<b>execut&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9474;<b>c&acirc;t timp</b> C
+		<br/>&#9492;&#8718;
+		</div></td>
+		<td><div id="code">
+		<b>do</b> 
+		<br>&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/><b>while</b> (C);
+		</div></td>
+	</tr>
+	<tr>
+		<td><div id="code">
+		<b> &#9484;repet&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9474;<b>p&acirc;n&abreve; c&acirc;nd</b> C
+		<br/>&#9492;&#8718;
+		</div></td>
+		<td><div id="code">
+		<b>do</b> 
+		<br>&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/><b>while</b> (!C);
+		</div></td>
+	</tr>
+	<tr>
+		<td><div id="code">
+		<b>&#9484;pentru</b> i&larr;vi, vf <b>execut&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9492;&#8718;
+		</div></td>
+		<td><div id="code">
+		<b>for</b> (i=vi; i&lt;=vf; i++)
+		<br>&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		</div></td>
+	</tr>
+	</table>
+	<br/>Observa&tcedil;ii: 
+	<ol>
+		<li>Dac&abreve; blocurile de instruc&tcedil;iuni con&tcedil;in mai multe comenzi, acestea vor fi &icirc;ncadrate &icirc;ntre acolade [{bloc_instruc&tcedil;iuni}].</li>
+		<li>Dac&abreve; blocurile de instruc&tcedil;iuni sunt reprezentate doar de o comand&abreve;, se poate renun&tcedil;a la acolade.</li>
+		<li>Orice instruc&tcedil;iune/comand&abreve; se termin&abreve; cu punct &scedil;i virgul&abreve;[;]!</li>
+		<li>Am prezentat varianta cel mai des &icirc;ntalnit&abreve; a structurii repetitive cu contor. Ea poate fi &icirc;nsa modificat&abreve;, &tcedil;in&acirc;d cont de urm&abreve;toarea form&abreve;:
+		<div id="code"><br/>for (ini&tcedil;ial; test; modific&abreve;) bloc_instruc&tcedil;iuni<br/><br/>
+		<ol type="a">
+			<li><b>ini&tcedil;ial</b> fie reprezint&abreve; mai multe atribuiri, separate prin virgule <br/><b>ex:</b> <div id="code">for(<i>i=1, j=2</i>; test; modific&abreve;) bloc_instruc&tcedil;iuni </div> 
+			fie poate r&abreve;m&acirc;ne gol <br/><b>ex:</b> <div id="code">for( ; test; modific&abreve;) bloc_instruc&tcedil;iuni </div></li>
+			<li><b>test</b> reprezint&abreve; o expresie/condi&tcedil;ie de ie&scedil;ire din structura repetitiv&abreve;, <i>nu poate lipsi</i>.</li>
+			<li><b>modific&abreve;</b> reprezint&abreve; o modificare a contorului, pentru a se putea nega expresia test &scedil;i a se ie&scedil;i din structur&abreve;. Ea poate lipsi, &icirc;ns&abreve; contorul sau variabila de care depinde expresia-test trebuie s&abreve; se schimbe &icirc;n interiorul
+			blocului de instruc&tcedil;iuni.</li>
+		</ol></li>
+		<br/><li>&Icirc;n C/C++, exist&abreve; o instruc&tcedil;iune de oprire "for&tcedil;at&abreve;" a func&tcedil;iilor repetitive, ce se situeaz&abreve; &icirc;n blocul de instruc&tcedil;iuni &icirc;n anumite situa&tcedil;ii (ex: s-a g&abreve;sit un divizor la verificarea primalit&abreve;&tcedil;ii unui num&abreve;r). Aceasta este:
+		<div id="code">break;</div></li>
+	</ol>
+	<br/>
+</div>
+
+</body>
+</html>

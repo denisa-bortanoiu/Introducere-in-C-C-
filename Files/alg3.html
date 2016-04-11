@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Expresii &scedil;i operatori</title>
+<link rel="stylesheet" type="text/css" href="css/alg.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center">Algoritmi</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="alg1.html">No&tcedil;iunea de algoritm</a></li>
+		<li><a href="alg2.html">Date &scedil;i opera&tcedil;ii asupra lor</a></li>
+		<li><a href="alg3.html"><b>Expresii &scedil;i operatori</b></a></li>
+		<li><a href="alg4.html">Exerci&tcedil;ii</a></li>
+	</ul>
+</div>
+</div>
+
+<div id="text">
+	<p>O <b>expresie</b> este alc&abreve;tuit&abreve; din unul sau mai mul&tcedil;i operanzi lega&tcedil;i &icirc;ntre ei prin operatori.</p>
+	<p><b>Operanzii</b> pot fi: constante, variabile sau chiar expresii (scrise &icirc;ntre paranteze rotunde).</p>
+	<p><b>Operatorii</b> desemneaz&abreve; opera&tcedil;iile care se execut&abreve; asupra operanzilor. Operatorii care se utilizeaz&abreve; &icirc;ntr-o expresie depind de tipul operanzilor.
+	Principalele categorii de operatori sunt:<p>
+	<ol>
+		<p><li><i>operatori aritmetici</i>: + (adunare), - (scadere), * (&icirc;nmultire), / (&icirc;mp&abreve;r&tcedil;ire), % (restul &icirc;mp&abreve;r&tcedil;irii &icirc;ntregi)
+		<br/>Exemple:
+			<table>
+				<tr>
+					<th>Valorile variabilelor care intervin</th>
+					<th>Expresia</th>
+					<th>Valoare rezultat&abreve;</th>
+				</tr>
+				<tr>
+					<td>x=7, y=3</td>
+					<td>x-2*y+1</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>(a+b+c)/2</td>
+					<td>a=2, b=1.5, c=3.5</td>
+					<td>3.5</td>
+				</tr>
+				<tr>
+					<td>n=12345</td>
+					<td>n%10</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>n=12345</td>
+					<td>[n/10]</td>
+					<td>1234</td>
+				</tr>
+			</table>
+			
+			
+		<i>Observatie!</i> &Icirc;n pseudocod, nota&tcedil;ia [n] reprezint&abreve; partea &icirc;ntreag&abreve; a num&abreve;rului n. Dupa cum se observ&abreve; &icirc;n exemplul de mai sus, c&acirc;tul 
+		&icirc;mp&abreve;r&tcedil;irii &icirc;ntregi a lui x la y se noteaz&abreve; cu [x/y].</p></li>
+		<p><li><i>operatori rela&tcedil;ionali</i>: &lt; (mai mic), > (mai mare), &le; (mai mic sau egal), &ge; (mai mare sau egal), = (egal), &ne; (diferit)
+		<br/>Exemple:
+			<table><p>
+				<tr>
+					<th>Valorile variabilelor care intervin</th>
+					<th>Expresia</th>
+					<th>Valoare rezultat&abreve;</th>
+				</tr>
+				<tr>
+					<td>x=-1</td>
+					<td>x &ge; 1 </td>
+					<td>0/False</td>
+				</tr>
+				<tr>
+					<td>x=4, y=3</td>
+					<td>2*x &ne; 3*y</td>
+					<td>1/True</td>
+				</tr>
+			</table></p></li>
+		<li><i>operatori logici</i>: not/! (nega&tcedil;ie), and (&scedil;i), or (sau)
+		<br/> Exemple:
+			<table><p>
+				<tr>
+					<th>Valorile variabilelor care intervin</th>
+					<th>Expresia</th>
+					<th>Valoare rezultat&abreve;</th>
+				</tr>
+				<tr>
+					<td>r=6</td>
+					<td>r=1 or r=2</td>
+					<td>0/False</td>
+				</tr>
+				<tr>
+					<td>a=2, b=3, c=4</td>
+					<td>a < b+c and b < a+c and c < a+b
+					<br/>(condi&tcedil;ie de existen&tcedil;a a triunghiului cu laturile a, b, c)</td>
+					<td>1/True</td>
+				</tr>
+				<tr>
+					<td>a=-2</td>
+					<td>!(a&ge;-1)</td>
+					<td>1/True</td>
+				</tr>
+				<tr>
+					<td>a=-2</td>
+					<td>a&ge;-2 and a&le;2
+					<br/>(condi&tcedil;ia de apartenen&tcedil;&abreve; &icirc;n intervalul [-2, 2])</td>
+					<td>1/True</td>
+				</tr>
+			</table></p></li>
+	</ol>
+	<p><b>Evaluarea unei expresii</b> presupune &icirc;nlocuirea variabilelor din expresie cu valorile lor curente &scedil;i efectuarea calculelor. &Icirc;n urma execut&abreve;rii unei
+	expresii se ob&tcedil;ine o valoare rezultat&abreve;, tipul acesteia indic&acirc;nd tipul expresiei. &Icirc;n procesul de evaluare a unei expresii se &tcedil;ine cont de prioritatea
+	operatorilor &scedil;i de asociativitatea acestora.
+	<br/>Operatorii sunt &icirc;mp&abreve;r&tcedil;iti &icirc;n 4 grupe de prioritate:</p>
+	<ol>
+		<li><i>operatori unari</i>: not/!</li>
+		<li><i>operatori multiplicativi</i>: *, /, %, and</li>
+		<li><i>operatori aditivi</i>: +, -, or</li>
+		<li><i>operatori rela&tcedil;ionali</i>: >, <, &ge;, &le;, =, &ne;</li>
+	</ol>
+	Parantezele pot schimba ordinea de executare a opera&tcedil;iilor (se respect&abreve; acelea&scedil;i reguli ca la matematic&abreve;).</p>
+	Exemple:
+	<p><ol>
+		<li>&icirc;n expresia <b>a-b/c*d+e</b> opera&tcedil;iile se efectueaz&abreve; &icirc;n urm&abreve;toarea ordine: /, *, -, + (/, * au prioritate mai mare fa&tcedil;&abreve; de operatorii +, -; apoi
+		opera&tcedil;iile se efectueaz&abreve; ca la matematic&abreve;, de la st&acirc;nga la dreapta)</li>
+		<li>expresia <b>(a-b)/3</b> nu este echivalent&abreve; cu expresia <b>a-b/3</b> (la prima expresie se efectueaz&abreve; mai &icirc;nt&acirc;i opera&tcedil;ia de sc&abreve;dere, iar &icirc;n cea de-a
+		doua expresie operatorul / se aplic&abreve; primul)</li>
+	</ul></p>
+	<br/><br/>
+</div>
+	
+</body>
+
+</html>
+

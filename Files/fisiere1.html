@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Fi&scedil;iere</title>
+<link rel="stylesheet" type="text/css" href="css/fisiere.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center"><a name="meniu"></a>Fi&scedil;iere</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="fisiere.html">Fi&scedil;iere text &icirc;n C</a></li>
+		<li><a href="fisiere1.html"><b>Fi&scedil;iere text &icirc;n C++</b></a></li>
+		<li><a href="fisiere2.html">Exerci&tcedil;ii</a></li>
+	</ul>
+	<ul id="menu2">
+		<li><a href="#decl">Declararea fi&scedil;ierelor</a>
+		<li><a href="#desch">Deschiderea &scedil;i &icirc;nchiderea fi&scedil;ierelor</a>
+		<li><a href="#cit">Citirea datelor &icirc;n fi&scedil;iere</a>
+		<li><a href="#scr">Scrierea datelor &icirc;n fi&scedil;iere</a>
+	</ul>
+</div>
+</div>
+
+<div id="text">
+	<br/>Un <b>fişier</b> este o colecţie de date, fiind indicat printr-un nume şi o extensie. Numele este desp&abreve;rţit de extensie prin punct. Avantajul lucrului cu fi&scedil;iere este evident, datele rezultate în urma execuţiei unui 
+	program putând fi salvate. 
+	<br/><br/>Declararea, deschiderea &scedil;i &icirc;nchiderea fi&scedil;ierelor &icirc;n C++ utilizeaz&abreve; anumite clase &scedil;i func&tcedil;ii care sunt declarate
+	&icirc;n biblioteca <i>fstream.h</i>, inclus&abreve; cu instruc&tcedil;iunea pentru preprocesor:
+	<div id="code">#include&lt;fstream.h></div>
+	<br/><a name="decl"><b>Declararea fi&scedil;ierelor</b></a>
+	<br/>Pentru a putea citi/scrie informa&tcedil;ii dintr-un/&icirc;ntr-un fi&scedil;ier, acesta se asociaz&abreve; unui <i>stream(flux)</i> de intrare/ie&scedil;ire.
+	<br/>Exista dou&abreve; procedee:
+	<ol>
+		<li><div id="code">fstream nume_fi&scedil;ier_logic (nume_fi&scedil;ier, mod_deschidere)</div>
+		<br/>Deci, pe l&acirc;ng&abreve; declarare, se precizeaz&abreve; &scedil;i modalitatea de deschidere a acestuia.
+		<br/><b>Exemplu:</b> <div id="code">fstream f("intrare.txt", ios::in);</div>
+		<br/>&Icirc;n tabelul de mai jos sunt date valorile &scedil;i opera&tcedil;iile asociate constantelor de sistem prezente &icirc;n construc&tcedil;ia <i>ios::constant&abreve;_&icirc;ntreag&abreve;</i>.
+		<br/><br/><table>
+		<tr>
+			<th>Valoare</th>
+			<th>Semnifica&tcedil;ie</th>
+		</tr>
+		<tr>
+			<td><div id="code">ios::in</div></td>
+			<td>Deschide fluxul pestru intrare</td>
+		</tr>
+		<tr>
+			<td><div id="code">ios::out</div></td>
+			<td>Deschide fi&scedil;ierul pentru ie&scedil;ire; dac&abreve; fi&scedil;ierul exist&abreve;, scrierea se va face la &icirc;nceputul sau cu pierderea con&tcedil;inutului anterior, altfel fi&scedil;ierul va fi creat</td>
+		</tr>
+		<tr>
+			<td><div id="code">ios::noncreate</div></td>
+			<td>Deschide un fi&scedil;ier dac&abreve; el exist&abreve; deja, altfel acesta nu va fi creat</td>
+		</tr>
+		<tr>
+			<td><div id="code">ios::noreplace</div></td>
+			<td>Deschide un fi&scedil;ier doar dac&abreve; el nu a fost creat deja</td>
+		</tr>
+		</table></li>
+		<br/><li>Prin utilizarea claselor <i>ifstream, ofstream</i> &scedil;i <i>fstream</i>. Acestea vor fi folosite pentru declararea fluxurilor de intrare/ie&scedil;ire.
+		<ol type="a">
+			<li><div id="code">ifstream nume_flux;</div>
+			- pentru intrare<br/>
+			<br/><li><div id="code">ofstream nume_flux;</div>
+			- pentru ie&scedil;ire</br>
+			<br/><li><div id="code">fstream nume_flux;</div>
+			- pentru intrare &scedil;i ie&scedil;ire<br/>
+		</ol></li>
+	</ol>
+	<a name="desch"><b>Deschiderea &scedil;i &icirc;nchiderea fi&scedil;ierelor</b></a>
+	<br/>Dup&abreve; declarare, pentru a avea acces la informa&tcedil;iile existente &icirc;n fi&scedil;iere, acestea trebuie <b>deschise</b>. Aceasta opera&tcedil;ie presupune asocierea
+	dintre <i>nume_flux</i> &scedil;i un fi&scedil;ier fizic, precum &scedil;i stabilirea unei modalit&abreve^&tcedil;i de deschidere. Va fi utilizat&abreve; func&tcedil;ia membr&abreve; open conform sintaxei:
+	<div id="code">nume_flux.open(nume_fi&scedil;ier);</div>
+	sau<div id="code">nume_flux.open(nume_fi&scedil;ier, mod_deschidere);</div>
+	<br/><b>Exemple</b>
+	<ol>
+		<li>Deschiderea unui fi&scedil;ier pentru intrare(citire):
+		<ol type="a">
+			<li><div id ="code">ifstream f;
+			<br/>f.open("fi&scedil;ier.txt");</div></li>
+			<li><div id ="code">ifstream f("fi&scedil;ier.txt");</div></li>
+			<li><div id ="code">fstream f;
+			<br/>f.open("fi&scedil;ier.txt", ios::in);</div></li>
+		</ol>
+		<li>Deschiderea unui fi&scedil;ier pentru ie&scedil;ire(scriere):
+		<ol type="a">
+			<li><div id ="code">ofstream g;
+			<br/>g.open("fi&scedil;ier.txt");</div></li>
+			<li><div id ="code">ofstream g("fi&scedil;ier.txt");</div></li>
+			<li><div id ="code">fstream f;
+			<br/>f.open("fi&scedil;ier.txt", ios::out);</div></li>
+		</ol>
+	</ol>
+	<b>&Icirc;nchiderea</b> unui fi&scedil;ier se realizeaz&abreve; cu func&tcedil;ia <i>close()</i> al c&abreve;rei apel este:
+	<div id="code">nume_flux.close();</div>
+	<br/><b>Exemplu:</b> 
+	<div id="code">g.close(); //unde g a fost declarat mai sus, deschiz&acirc;nd <i>fi&scedil;iere.txt</i>.</div> 
+	<br/><br/>
+	<a name="cit"><b>Citirea datelor din fi&scedil;iere</b></a>
+	<br/>Pentru a realiza opera&tcedil;ii de citire dintr-un fi&scedil;ier de intrare, se poate utiliza operatorul de citire >> sau pot fi folosite func&tcedil;ii membre.
+	<br/><b>Exemplu</b>
+	<div id="code">ifstream f("in.txt");
+	<br/>int n;
+	<br/>f>>n; //&icirc;n variabila n se memoreaz&abreve; prima valoare din fi&scedil;ierul <i>in.txt</i>
+	<br/>f.close();</div><br/>
+	<table><tr><th><i>S&abreve; se verifice &scedil;i s&abreve; afi&scedil;eze c&acirc;te numere sunt &icirc;n fi&scedil;ierul "unu.in". (acesta con&tcedil;ine numai numere de maxim 4 cifre) </i></th></td></table>
+	<table>
+		<tr>
+			<td><div id="code">
+			#include&lt;iostream.h>
+			<br/>#include&lt;fstream.h>
+			<br/>int main () {
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;int n=0, x;
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;ifstream f;
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;f.open("unu.in");
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>while (f>>x)</b>
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n++;
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;f.close();
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;n;
+			<br/>return 0; }</div></td>
+			<td><div id="code">
+			#include&lt;iostream.h>
+			<br/>#include&lt;fstream.h>
+			<br/>int main () {
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;int n=0, x;
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;ifstream f;
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;f.open("unu.in");
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>while (f.get()!=EOF)</b>
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;f>>x; n++; }
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;f.close();
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;n;
+			<br/>return 0; }</div></td>
+		</tr>
+	</table>
+	<br/><b>Observa&tcedil;ii!</b>
+	<br/>Func&tcedil;ia <i>get()</i> cite&scedil;te un caracter &scedil;i returneaz&abreve; dac&abreve; acesta disponibil.
+	<br/><i>EOF(end of file)</i> reprezint&abreve; sf&acirc;r&scedil;itul fi&scedil;ierului (nu mai exist&abreve; date dupa EOF).
+	<br/>Caracterul <i>'\n'</i> marcheaz&abreve; sf&acirc;r&scedil;itul liniei.
+	<br/><br/><a name="scr"><b>Scrierea datelor &icirc;n fi&scedil;iere</b></a>
+	<br/>Opera&tcedil;iile de scriere se realizeaz&abreve; cu operatorul de scriere &lt;&lt; sau cu func&tcedil;ii de sistem &scedil;i variabile de memorie (pentru scrierea cu format).
+	<br/><b>Exemplu</b>
+	<ol>
+		<li><div id="code">ofstream g("out.txt");
+			<br/>int n=22;
+			<br/>g&lt;&lt;n; //&icirc;n fi&scedil;ierul <i>out.txt</i> se va scrie valoarea 22.
+			<br/>g.close();</div><br/></li>
+		<li><div id="code">fstream g("out.txt", ios::app);
+			<br/>int n=22;
+			<br/>g&lt;&lt;n; //&icirc;n fi&scedil;ierul <i>out.txt</i> se va <b>ad&abreve;uga</b> la con&tcedil;inutul curent al fi&scedil;ierului valoarea 22.
+			<br/>g.close();</div><br/></li>
+	</ol>
+	Pentru utilizarea <b>func&tcedil;iilor de sistem (manipulatori)</b>, trebuie introdus fi&scedil;ierul antet <div id="code">iomanip.h</div>
+	<br/>Dintre manipulatori, amintim:
+	<div id="code"> setw(int n) - face l&acirc;&tcedil;imea c&acirc;mpului de afi&scedil;are egal cu n
+	<br/> setprecision(int n) - seteaz&abreve; precizia de afi&scedil;are, num&abreve;rul de zecimale afi&scedil;at fiind egal cu n
+	</div>
+	<br/><b>Exemplu: </b>S&abreve; se afiseze pe r&acirc;nduri separate &icirc;n fi&scedil;ierul "out.txt" num&abreve;rul n=4.11516 cu 4, 5, respectiv 6 zecimale.<br/>
+	<div id="code">
+		#include&lt;fstream.h>
+		<br/>#include&lt;iomanip.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;float n=4.11516;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;ofstream g;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;g.open("out.in");
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;g&lt;&lt;setprecision(4)&lt;&lt;n&lt;&lt;endl; //se va scrie 4.1151
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;g&lt;&lt;setprecision(5)&lt;&lt;n&lt;&lt;endl; //se va scrie 4.11516
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;g&lt;&lt;setprecision(6)&lt;&lt;n&lt;&lt;endl; //se va scrie 4.115160
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;g.close();
+		<br/>return 0; }</div>
+	<br/><br/>
+		
+</div>
+
+</body>
+
+</html>
+

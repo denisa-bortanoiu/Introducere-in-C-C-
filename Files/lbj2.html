@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Structura programului</title>
+<link rel="stylesheet" type="text/css" href="css/lbj.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center"><a name="meniu"></a>Limbajul de programare C/C++</h1>
+	<ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="lbj1.html">Date &scedil;i operatori</a></li>
+		<li><a href="lbj3.html">Instruc&tcedil;iuni &scedil;i structuri</a></li>
+		<li><a href="lbj2.html"><b>Structura programului</b></a></li>
+	</ul>
+	</div>
+</div>
+
+<div id="text">
+	Un program este alc&abreve;tuit din una sau mai multe func&tcedil;ii, func&tcedil;ia main fiind prima care se execut&abreve; &scedil;i ea nu poate lipsi. Celelalte func&tcedil;ii sunt definite de utilizator.
+	<br/>Orice func&tcedil;ie este format&abreve; din:
+	<ol> 
+		<li><i>antet</i> : <b>tip nume_func&tcedil;ie ([list&abreve; parametri formali])</b>
+		<ul>
+			<li>O func&tcedil;ie poate s&abreve; returneze o valoare de un anumit <b>tip</b>(int, long, double, etc) sau s&abreve; nu returneze nicio valoare, caz &icirc;n care este de tip void.</li>
+			<li><b>Parametri formali</b> sunt identificatori de variabile pe care urmeaz&abreve; s&abreve; le foloseasca func&tcedil;ia atunci c&acirc;nd se va executa. Pentru
+			a comanda execu&tcedil;ia unei func&tcedil;ii, aceasta trebuie <i>apelat&abreve;</i>. La apel, parametrii formali sunt &icirc;nlocui&tcedil;i cu valori concrete, numite <b>parametri actuali</b>.</li>
+		</ul></li>
+		<li><i>corp</i> : <b>{ declara&tcedil;ii; instruc&tcedil;iuni; }</b></li>
+		<ul><li>&Icirc;n cazul &icirc;n care tipul unei func&tcedil;ii este diferit de void, corpul ei trebuie s&abreve; con&tcedil;ina cel pu&tcedil;in o instruc&tcedil;iune de tip <b>return valoare/expresie</b>.</li></ul>
+	</ol>
+	Func&tcedil;ia <b>main</b> trebuie s&abreve; fie de tip <b>int</b>. Ea va returna valoarea <b>0</b> la sf&acirc;r&scedil;itul setului de instruc&tcedil;iuni. Nu are parametri.
+	<p>&Icirc;n C/C++ exist&abreve; &scedil;i func&tcedil;ii predefinte, care i&scedil;i au defini&tcedil;ia(prototipul) &icirc;n fi&scedil;iere antet/ headere/ biblioteci. 
+	predefinita, la inceputul programului trebuie scrisa o directiva preprocesor astfel: <b>#include&lt;nume_header></b>.</p>
+	Des folosite, sunt functiile urm&abreve;toare, ale c&abreve;ror prototipuri se g&abreve;sesc &icirc;n fi&scedil;ierul antet <i>math.h</i>:
+	<table>
+	<tr>
+		<th></th><th>Tipul argumentului</th><th>Semnifica&tcedil;ie</th><th>Exemplu</th>
+	</tr>
+	<tr>
+		<th>pow(x,y)</th><td>&nbsp;&nbsp;x &scedil;y de tip double</td><td>&nbsp;&nbsp;x<sup>y</sup></td><td>&nbsp;&nbsp;a=pow(2, 3); //a=8</td>
+	</tr>	
+	<tr>
+		<th>abs(x)</th><td>&nbsp;&nbsp;x de tip double</td><td>&nbsp;&nbsp;valoarea absolut&abreve; a argumentului</td><td>&nbsp;&nbsp;a=abs(-2); //a=2</td>
+	</tr>
+	<tr>
+		<th>sqrt(x)</th><td>&nbsp;&nbsp;x de tip double</td><td>&nbsp;&nbsp;radical din x (x&ge;0)</td><td>&nbsp;&nbsp;a=sqrt(25); //a=5</td>
+	</tr>
+	<tr>
+		<th>sin(x)</th><td>&nbsp;&nbsp;x de tip double</td><td>&nbsp;&nbsp;sinusul lui x</td><td>&nbsp;&nbsp;a=sin(0); //a=0</td>
+	</tr>
+	<tr>
+		<th>cos(x)</th><td>&nbsp;&nbsp;x de tip double</td><td>&nbsp;&nbsp;cosinul lui x</td><td>&nbsp;&nbsp;a=cos(0); //a=1</td>
+	</tr>
+	<tr>
+		<th>atan(x)</th><td>&nbsp;&nbsp;x de tip double</td><td>&nbsp;&nbsp;unghiul a carui tangent&abreve; este x</td><td>&nbsp;&nbsp;a=atan(0); //a=0</td>
+	</tr>
+	<tr>
+		<th>log(x)</th><td>&nbsp;&nbsp;x de tip double</td><td>&nbsp;&nbsp;logaritm natural din r (r>0)</td><td>&nbsp;&nbsp;a=log(1); //a=0</td>
+	</tr>
+	<tr>
+		<th>ceil(x)</th><td>&nbsp;&nbsp;x de tip float</td><td>&nbsp;&nbsp;cel mai mic &icirc;ntreg &ge;r</td><td>&nbsp;&nbsp;a=ceil(12.23); //a=13</td>
+	</tr>
+	<tr>
+		<th>floor(x)</th><td>&nbsp;&nbsp;x de tip float</td><td>&nbsp;&nbsp;cel mai mare &icirc;ntreg &le;r</td><td>&nbsp;&nbsp;a=floor(1.34); //a=1</td>
+	</tr>
+	</table>	
+	<br/>Comentariile &icirc;ntr-un program sunt &icirc;ncadrate &icirc;ntre /* &scedil;*/ sau &icirc;ntre // &scedil;i sf&acirc;r&scedil;itul liniei.
+	<br/>Variabilele care nu sunt declarate &icirc;n cadrul unei func&tcedil;ii se numesc <i>variabile globale</i>. Ele vor fi ini&tcedil;ializate cu valoarea 0. Variabilele declarate &icirc;n corpul
+	unei func&tcedil;ii vor fi ini&tcedil;ializate cu valori aleatoare.
+	
+	<br/><br/><b>Exemplu: </b>
+	<br/>S&abreve; se scrie un program C/C++ care calculeaz&abreve; cel mai mic divizor propriu al num&abreve;rului natural nenul x citit de la tastatur&abreve;.
+	<div id="code">
+	<br/>#include&lt;iostream.h>
+	<br/>#include&lt;math.h>
+	<br/>int main () 
+	<br/>{
+	<br/>&nbsp;&nbsp;&nbsp;int x, d, r;
+	<br/>&nbsp;&nbsp;&nbsp;cin>>x;
+	<br/>&nbsp;&nbsp;&nbsp;r=sqrt(x);
+	<br/>&nbsp;&nbsp;&nbsp;for(d=2; d<=r; d++)
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (x%d==0) 
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;d; 
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+	<br/>&nbsp;&nbsp;&nbsp;return 0; 
+	<br/>}
+	</div>
+	<br/>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Algoritmi echivalen&tcedil;i</title>
+<link rel="stylesheet" type="text/css" href="css/struct.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center">Structuri de control</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="struct1.html">Structura liniar&abreve;</a></li>
+		<li><a href="struct2.html">Structura alternativ&abreve;</a></li>
+		<li><a href="struct3.html">Structuri repetitive</a></li>
+		<li><a href="struct4.html"><b>Algoritmi echivalen&tcedil;i</b></a></li>
+		<li><a href="struct5.html">Exerci&tcedil;ii</a></li>
+	</ul>
+</div>
+</div>
+<div id="text">
+	<p>Doi algoritmi sunt <b>echivalen&tcedil;i</b> dac&abreve; pentru orice set de date de intrare produc acela&scedil;i set de date de ie&scedil;ire.</p>
+	<p><b>Echivalen&tcedil;a repeti&tcedil;iilor:</b>
+	<table>
+	<tr>
+		<th>Structuri repetitive cu test final</th>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td><div id="code">
+			<b>&#9484;c&acirc;t timp</b> C <b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9492;&#8718;</div></td>
+		<td><div id="code">
+			<b>&#9484;repet&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;<b>p&acirc;n&abreve; c&acirc;nd !</b>C
+			<br/>&#9492;&#8718;</div></td>
+	</tr>
+	
+	</table>
+	<br/>
+	<table>
+	<tr>
+		<th>Structura repetitiv&abreve; cu test ini&tcedil;ial</th>
+		<th>Structura repetitiv&abreve; cu test final</th>
+	</tr>
+	<tr>
+		<td><div id="code">
+			<b>&#9484;c&acirc;t timp</b> C <b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9492;&#8718;</div></td>
+		<td><div id="code">
+			<b>&#9484;dac&abreve;</b> C <b>atunci</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9484;<b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;<b>c&acirc;t timp</b> C
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#8718;
+			<br/>&#9492;&#8718;	</div></td>
+	</tr>
+	</table>
+	<br/>
+	<table>
+	<tr>
+		<th>Structura repetitiv&abreve; cu test final</th>
+		<th>Structura repetitiv&abreve; cu test ini&tcedil;ial</th>
+	</tr>
+	<tr>
+		<td><div id="code">
+			<b>&#9484;repet&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;<b>p&acirc;n&abreve; c&acirc;nd</b> C
+			<br/>&#9492;&#8718;	</div></td>
+		<td><div id="code">
+			bloc_instructiuni
+			<br/><b>&#9484;execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;<b>c&acirc;t timp !</b>C
+			<br/>&#9492;&#8718;	</div></td>
+	</tr></div>
+	</table>
+	<br/>
+	<table>
+	<tr>
+		<th>Structura repetitiv&abreve; cu contor cresc&abreve;tor, pas=1</th>
+		<th>Structura repetitiv&abreve; cu test ini&tcedil;ial</th>
+		<th>Structura repetitiv&abreve; cu test final</th>
+	</tr>
+	<tr>
+		<td><div id="code">
+			<b>&#9484;pentru</b> i&larr;a, b <b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9492;&#8718;	</div></td>
+		<td><div id="code">
+			<b>&#9484;dac&abreve;</b> a&le;b atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;a
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9484;<b>c&acirc;t timp</b>i&le;b <b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;i+1
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#8718;	
+			<br/>&#9492;&#8718;	</div></td>
+			
+		<td><div id="code">
+			<b>&#9484;dac&abreve;</b> a&le;b atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;a
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9484;<b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;i+1
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;<b>c&acirc;t timp</b> i&ge;b
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#8718;
+			<br/>&#9492;&#8718;</div></td>
+	</tr>
+	</table>
+	<br/>
+	<table>
+	<tr>
+		<th>Structura repetitiv&abreve; cu contor descresc&abreve;tor, pas=-1</th>
+		<th>Structura repetitiv&abreve; cu test ini&tcedil;ial</th>
+		<th>Structura repetitiv&abreve; cu test final</th>
+	</tr>
+	<tr>
+		<td><div id="code">
+			<b>&#9484;pentru</b> i&larr;a, b, -1 <b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9492;&#8718;</div></td>
+		<td><div id="code">
+			<b>&#9484;daca</b> a&ge;b atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;a
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9484;<b>c&acirc;t timp</b>i&ge;b <b>execut&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;i-1
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#8718;
+			<br/>&#9492;&#8718;</div></td>
+			
+		<td><div id="code">
+			<b>&#9484;daca</b> a&ge;b atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;a
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9484;<b>repet&abreve;</b>
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;bloc_instructiuni
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;&nbsp;i&larr;i-1
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9474;<b>p&acirc;n&abreve; c&acirc;nd</b> i&ge;b
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#8718;
+			<br/>&#9492;&#8718;</div></td>
+	</tr>
+	</table>
+<br/>
+<br/>
+</div>
+
+
+</body>
+
+</html>

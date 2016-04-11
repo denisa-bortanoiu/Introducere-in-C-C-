@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Structuri repetitive</title>
+<link rel="stylesheet" type="text/css" href="css/struct.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center">Structuri de control</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="struct1.html">Structura liniar&abreve;</a></li>
+		<li><a href="struct2.html">Structura alternativ&abreve;</a></li>
+		<li><a href="struct3.html"><b>Structuri repetitive</b></a></li>
+		<li><a href="struct4.html">Algoritmi echivalen&tcedil;i</a></li>
+		<li><a href="struct5.html">Exerci&tcedil;ii</a></li>
+	</ul>
+	<ul id="menu2">
+		<li><a href="#init">Structura repetitiv&abreve; cu test inti&tcedil;ial</a></li>
+		<li><a href="#fin">Structura repetitiv&abreve; cu test final</a></li>
+		<li><a href="#det">Structura repetitiv&abreve; cu contor</a></li>
+	</ul>
+</div>
+</div>
+<div id="text">
+	<p><b>Structura repetitiv&abreve;</b>
+	<br/>Se folose&scedil;te atunci c&acirc;nd se impune repet&abreve;rea unei secven&tcedil;e de instruc&tcedil;iuni. Apare &icirc;n urm&abreve;toarele variante:
+	<ol>
+		<li>Structura repetitiv&abreve; cu num&abreve;r nedeterminat(necunoscut) de pa&scedil;i
+		<ol type="a">
+			<li><a href="#init"><b>Structura repetitiv&abreve; cu test inti&tcedil;ial</b></a></li>
+			<li><a href="#fin"><b>Structura repetitiv&abreve; cu test final</b></a></li>
+		</ol></li>
+		<li><a href="#det"><b>Structura repetitiv&abreve; cu num&abreve;r determinat de pa&scedil;i (cu contor)</b></a></li>
+	</ol></p>
+	<p><b><a name="init">Structura repetitiv&abreve; cu test inti&tcedil;ial</b><a name="init"></a> (prefixat&abreve;) se nume&scedil;te astfel deoarece la intrarea &icirc;n structur&abreve; se testeaz&abreve; mai &icirc;nt&acirc;i valoarea de adev&abreve;r
+	a unei condi&tcedil;ii, iar &icirc;n func&tcedil;ie de rezultat se execut&abreve; &icirc;n mod repet&abreve;t o secven&tcedil;a de instruc&tcedil;iuni, sau se p&abreve;r&abreve;se&scedil;te structura.<p>
+	<b>Reprezentarea &icirc;n pseudocod:</b>
+	<div id="code">
+		&#9484;<b>c&acirc;t timp</b> C <b>execut&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9492;&#8718;
+	</div>
+	<br/><b>Mod de execu&tcedil;ie</b>
+	<ol>
+		<li>Se evalueaz&abreve; condi&tcedil;ia C</li>
+		<li>Dac&abreve; valoarea de adev&abreve;r a condi&tcedil;iei C este 1/True, se execut&abreve; blocul de instruc&tcedil;iuni dup&abreve; care<i> se revine la testarea condi&tcedil;iei C</i></li>
+		<li>C&acirc;nd valoarea de adev&abreve;r a condi&tcedil;iei C devine 0/False, se p&abreve;r&abreve;se&scedil;te structura.</li>
+	</ol>
+	<b>Observa&tcedil;ie:</b> Dac&abreve; la prima evaluare a condi&tcedil;iei C, valoarea ei este 0/False, atunci blocul de instruc&tcedil;iuni nu va fi executat nici mac&abreve;r o dat&abreve;.
+	<p><b>Exemplu: </b>
+	<br/>Se cite&scedil;te un num&abreve;r natural n. Se cere s&abreve; se determine &scedil;i s&abreve; se afi&scedil;eze num&abreve;rul cifrelor sale. (pentru n=1342, se va afi&scedil;a 4).
+	<div id="code">
+	cite&scedil;te n
+	<br/>nr&larr;0
+	<br/>&#9484;c&acirc;t timp n&ne;0 execut&abreve;
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;n&larr;[n/10]
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;nr&larr;nr+1
+	<br/>&#9492;&#8718;
+	<br>scrie nr
+	</div></p>
+	<p><b><a name="fin">Structura repetitiv&abreve; cu test final</b><a name="init"></a> (postfixat&abreve;) presupune executarea unui bloc de instruc&tcedil;iuni &scedil;i apoi 
+	testarea valorii de adev&abreve;r a unei condi&tcedil;ii, &icirc;n func&tcedil;ie de care se p&abreve;r&abreve;seste sau nu structura. Se recomand&abreve; utilizarea ei atunci c&acirc;nd exist&abreve; certitudinea 
+	execut&abreve;rii cel putin o dat&abreve; a blocului de instruc&tcedil;iuni inclus &icirc;n structur&abreve;.<p>
+	<b>Reprezentarea &icirc;n pseudocod:</b>
+	<ol>
+	<li><div id="code">
+		&#9484;<b>execut&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9474;<b>c&acirc;t timp</b> C
+		<br/>&#9492;&#8718;
+	</div>
+	<br/><b>Mod de execu&tcedil;ie</b>
+	<ol>
+		<li>Se execut&abreve; necondi&tcedil;ionat blocul de instruc&tcedil;iuni.
+		<li>Se evalueaz&abreve; condi&tcedil;ia C.</li>
+		<li>Daca valoarea de adev&abreve;r a condi&tcedil;iei este 1/True, atunci se va relua execu&tcedil;ia blocului de instruc&tcedil;iuni.</li>
+		<li>Atunci c&acirc;nd valoarea de adev&abreve;r a condi&tcedil;iei va fi 0/False, se va p&abreve;r&abreve;si structura repetitiv&abreve;.</li>
+	</ol></li>
+	<br/><p><b>Exemplu: </b>
+	<br/>Se citesc de la tastatur&abreve; numere intregi p&acirc;n&abreve; la citirea unui 0. &Scedil;tiind c&abreve; primul num&abreve;r citit este nenul, s&abreve; se afi&scedil;eze num&abreve;rul de numere citite, f&abreve;r&abreve; 0.
+	<div id="code">
+	nr&larr;0
+	<br/>ok&larr;1
+	<br/>&#9484;execut&abreve;
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;cite&scedil;te x
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;daca x!=0 atunci
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nr&larr;nr+1
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;altfel
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok=0
+	<br/>&#9474;c&acirc;t timp ok&ne;0
+	<br/>&#9492;&#8718;
+	<br/>scrie nr
+	</div></p>
+	<p><li><div id="code">
+		<b> &#9484;repet&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9474;<b>p&acirc;n&abreve; c&acirc;nd</b> C
+		<br/>&#9492;&#8718;
+	</div>
+	<br/><b>Mod de execu&tcedil;ie</b>
+	<ol>
+		<li>Se execut&abreve; necondi&tcedil;ionat blocul de instruc&tcedil;iuni.
+		<li>Se evalueaz&abreve; condi&tcedil;ia C.</li>
+		<li>Daca valoarea de adev&abreve;r a condi&tcedil;iei este 0/False, atunci se va relua execu&tcedil;ia blocului de instruc&tcedil;iuni.</li>
+		<li>Atunci c&acirc;nd valoarea de adev&abreve;r a condi&tcedil;iei va fi 1/True, se va p&abreve;r&abreve;si structura repetitiv&abreve;.</li>
+	</ol></li>
+	</ol>
+	<p><b>Exemplu: </b>
+	<br/>Se cite&scedil;te un &scedil;ir de num&abreve;r natural p&acirc;n&abreve; la citirea unui num&abreve;r de exact dou&abreve; cifre. S&abreve; se afiseze predecesorul &scedil;i succesorul acestuia. 
+	<div id="code">
+	cite&scedil;te n
+	<br/>&#9484;repet&abreve;
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;cite&scedil;te n
+	<br/>&#9474;p&acirc;n&abreve; c&acirc;nd n&ge;10 &scedil;i n&le;99
+	<br/>&#9492;&#8718;
+	<br/>scrie n-1
+	<br/>scrie n+1
+	</div></p>
+	<p><b><a name="det">Structura repetitiv&abreve; cu num&abreve;r determinat de pa&scedil;i</b><a name="init"></a> (cu contor) se utilizeaz&abreve; atunci c&acirc;nd se cunoa&scecil;te, &icirc;naintea 
+	execut&abreve;rii blocului de instruc&tcedil;iuni de c&acirc;te ori trebuie s&abreve; se execute acesta.<p>
+	<b>Reprezentarea &icirc;n pseudocod:</b>
+	<div id="code">
+		<b>&#9484;pentru</b> i&larr;vi, vf, pas <b>execut&abreve;</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instruc&tcedil;iuni
+		<br/>&#9492;&#8718;
+	</div>
+	<br/><b>Observa&tcedil;ii:</b>
+	<ol>
+		<li><i>i</i> este numit <i>contor</i></li>
+		<li><i>vi</i> reprezint&abreve; <i>valoarea inti&tcedil;ial&abreve;</i> a contorului</li>
+		<li><i>vf</i> reprezint&abreve; <i>valoarea final&abreve;</i> a contorului</li>
+		<li><i>pas</i> reprezint&abreve; <i>valoarea cu care variaz&abreve;</i> contorul</li>
+		<li>dac&abreve; <i>pas</i> este un num&abreve;r pozitiv, <i>i</i> va cre&scedil;te de la <i>vi</i> la <i>vf</i></li>
+		<li>dac&abreve; <i>pas</i> este un num&abreve;r negativ, <i>i</i> va sc&abreve;dea de la <i>vi</i> la <i>vf</i></li>
+	</ol>
+	<br/><b>Mod de execu&tcedil;ie</b> (pentru pas>0)
+	<ol>
+		<li>Se atribuie contorului valoarea inti&tcedil;ial&abreve;</li>
+		<li>Se compar&abreve; valoarea contorului cu valoarea final&abreve;. Daca i este mai mic sau egal cu <i>vf, se execut&abreve; blocul de instruc&tcedil;iuni</i>, dup&abreve; care 
+		contorul se incrementeaz&abreve; cu pas (<i>i&larr;i+pas</i>). </li>
+		<li>Atunci c&acirc;nd valoarea contorului devine mai mare dec&acirc;t <i>vf</i> se va p&abreve;r&abreve;si structura repetitiv&abreve;.</li>
+	</ol>
+	<b>Observa&tcedil;ie:</b> Daca pasul este 1, de obicei, nu se mai scrie.
+	<p><b>Exemplu: </b>
+	<br/>Se cite&scedil;te un num&abreve;r natural nenul n. &Icirc;n continuare, se cite&scedil;te un &scedil;ir de n numere naturale. S&abreve; se determine &scedil;i s&abreve; se afi&scedil;eze c&acirc;te dintre acestea sunt pare.
+	<br/>pentru n=7 &scedil;i sirul 25 2 62 8 7 12 361 se va afi&scedil;a 4
+	<div id="code">
+	cite&scedil;te n
+	<br/>nr&larr;0
+	<br/>&#9484;pentru i&larr;1, n execut&abreve;
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;cite&scedil;te x
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;daca x&2=0 atunci
+	<br/>&#9474;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nr&larr;nr+1
+	<br/>&#9492;&#8718;
+	<br>scrie nr
+	</div></p>
+<br/>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Structura alternativ&abreve;</title>
+<link rel="stylesheet" type="text/css" href="css/struct.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center"><a name="meniu"></a>Structuri de control</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="struct1.html">Structura liniar&abreve;</a></li>
+		<li><a href="struct2.html"><b>Structura alternativ&abreve;</b></a></li>
+		<li><a href="struct3.html">Structuri repetitive</a></li>
+		<li><a href="struct4.html">Algoritmi echivalen&tcedil;i</a></li>
+		<li><a href="struct5.html">Exerci&tcedil;ii</a></li>
+	</ul>
+</div>
+</div>
+
+<div id="text">
+	<p><b>Structura alternativ&abreve;</b>
+	<br/>Se folose&scedil;te pentru a alege o alternativ&abreve; din dou&abreve; posibile.</p>
+	<p><b>Reprezentare &icirc;n pseudocod:</b>
+	<br/>
+	<div id="code">
+		<b>&#9484;dac&abreve;</b> expresie_logic&abreve; <b>atunci</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instructiuni1
+		<br/>&#9474;<b>altfel</b>
+		<br/>&#9474;&nbsp;&nbsp;&nbsp;bloc_instructiuni2
+		<br/>&#9492;&#8718;
+	</div></p>
+	<p><b>Mod de execu&tcedil;ie:</b>
+	<br/>&Icirc;n cazul &icirc;n care valoarea de adev&abreve;r a expresiei logice este 1/True, se va executa bloc_instructiuni1, iar &icirc;n caz contrar se va executa bloc_instructiuni2.
+	</p>
+	<p><b>Observa&tcedil;ii:</b>
+	<ol>
+		<li>bloc_instructiuni1 &scedil;i bloc_instructiuni2 pot con&tcedil;ine orice fel de structur&abreve;, deci &scedil;i o alta structu&abreve; alternativ&abreve;.</li>
+		<li>ramura <b>altfel</b> poate lipsi.</li>
+		<li>intotdeauna se va executa <i>un singur bloc de instruc&tcedil;iuni</i> &icirc;n func&tcedil;ie de valoarea de adev&abreve;r a expresiei logice, dup&abreve; care <i>se va p&abreve;r&abreve;si 
+		structura alternativ&abreve;.</i></li>
+	</ol></p>
+	<p><b>Exemple:</b>
+	<ol>
+		<li>Se cite&scedil;te o valoare pentru o variabil&abreve; de tip &icirc;ntreg. Se cere s&abreve; se afi&scedil;eze valoarea absolut&abreve; a num&abreve;rului citit.
+		<div id="code">
+			<br/>cite&scedil;te a
+			<br/>&#9484;dac&abreve; a&ge;0 atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;scrie a
+			<br/>&#9474;altfel
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;scrie -a
+			<br/>&#9492;&#8718;
+		</div></li>
+		<br/><li>Se citesc 3 valori. S&abreve; se afi&scedil;eze cea mai mare valoare.
+		<div id="code">
+			<br/>cite&scedil;te a, b, c
+			<br/>&#9484;dac&abreve; a&ge;b atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9484;dac&abreve; a&ge;c atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;scrie a
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9492;&#8718;
+			<br/>&#9474;altfel 
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9484;dac&abreve; b&ge;c atunci
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;scrie b
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9474;altfel 
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9474;&nbsp;&nbsp;&nbsp;scrie c
+			<br/>&#9474;&nbsp;&nbsp;&nbsp;&#9492;&#8718;
+			<br/>&#9492;&#8718;
+			</div>
+<br/>
+</div>
+
+</body>
+
+</html>

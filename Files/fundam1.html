@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Operarea pe cifre</title>
+<link rel="stylesheet" type="text/css" href="css/fundam.css">
+</head>
+
+<body>
+
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center">Algoritmi fundamentali</h1>
+	<ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="fundam1.html"><b>Operarea pe cifre</b></a></li>
+		<li><a href="fundam3.html">Divizorii unui num&abreve;r</a></li>
+		<li><a href="fundam2.html">C.m.m.d.c</a></li>
+		<li><a href="fundam4.html">Exerci&tcedil;ii</a></li>
+		</div>
+		<ul id="menu2">
+		<li><a href="#struct">Structura general&abreve;</a>
+		<li><a href="#max">Cifra maxim&abreve;*</a></li>
+		<li><a href="#suma">Suma cifrelor*</a></li>
+		<li><a href="#ogl">Oglinditul. num&abreve;r palindrom</a></li>
+		<li><a href="#constr">Construc&tcedil;ii de numere</a></li>
+	</ul>
+
+	</ul></div>
+</div>
+
+<div id="text">
+	<br/><a name="struct"><b>Structura general&abreve;</b></a>
+	<br/>Algoritmul folosit este acela de acces la cifrele unui num&abreve;r. Pa&scedil;ii sunt, dup&abreve; cum urmeaz&abreve;:
+	<ol>
+		<li>Se cite&scedil;te num&abreve;rul <b>n</b> ce urmeaz&abreve; a fi prelucrat.</li>
+		<li>Se &icirc;mparte num&abreve;rul la 10, cu rest</li>
+		<li>Rest al &icirc;mp&abreve;r&tcedil;irii, ultima cifr&abreve; devine disponibil&abreve; pentru afi&scedil;are/operare</li>
+		<li>Num&abreve;rul devine <b>n&larr;[n/10]</b></li>
+		<li>Se revine <b>repetat la pasul 2</b>, dac&abreve; <b>n!=0</b> sau se opre&scedil;te repeti&tcedil;ia &icirc;n caz contrar.</li>
+	</ol>
+		
+	</b></ol>
+	
+	<table>
+	<tr>
+		<th><a name="max"></a><b>Determinarea cifrei maxime dintr-un num&abreve;r</b></th>
+	</tr>
+	<tr>
+		<td>Se cite&scedil;te un num&abreve;r natural nenul n de maxim 9 cifre. Se cere s&abreve; se determine &scedil;i s&abreve; se afi&scedil;eze cea mai mare cifr&abreve; a num&abreve;rului n. 
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a 4.
+		<p><div id="code">
+		#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;long n;
+		<br/>&nbsp;&nbsp;&nbsp;int max;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+		<br/>&nbsp;&nbsp;&nbsp;max=n%10;
+		<br/>&nbsp;&nbsp;&nbsp;while (n!=0) {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (max>n%10)
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max=n%10;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/10; }
+		<br/>&nbsp;&nbsp;&nbsp;cout&lt;&lt;max;
+		<br/>return 0; }
+		</div></p></td>
+	</tr>
+	<tr>
+		<td><b>Observa&tcedil;ie!</b> Pentru minim, se &icirc;nlocuie&scedil;te condi&tcedil;ia <b>max>n%10</b> cu <b>min&lt;n%10</b></td>
+	</tr>
+	</table>
+	<br/>
+	<table>
+	<tr>
+		<th><a name="suma"></a><b>Determinarea sumei/produsului cifrelor unui num&abreve;r</b></th>
+	</table>
+	<table>
+	</tr>
+	<tr>
+		<td>Se cite&scedil;te un num&abreve;r natural nenul n de maxim 9 cifre. Se cere s&abreve; se determine &scedil;i s&abreve; se afi&scedil;eze suma cifrelor sale. 
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a 10.
+		<p><div id="code">
+		#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;long n;
+		<br/>&nbsp;&nbsp;&nbsp;int s;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+		<br/>&nbsp;&nbsp;&nbsp;s=0;
+		<br/>&nbsp;&nbsp;&nbsp;while (n!=0) {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s=s+n%10;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/10; }
+		<br/>&nbsp;&nbsp;&nbsp;cout&lt;&lt;s;
+		<br/>return 0; }
+		</div></p></td>
+		<td>Se cite&scedil;te un num&abreve;r natural nenul n de maxim 9 cifre. Se cere s&abreve; se determine &scedil;i s&abreve; se afi&scedil;eze produsul cifrelor sale. 
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a 24.
+		<p><div id="code">
+		#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;long n;
+		<br/>&nbsp;&nbsp;&nbsp;int s;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+		<br/>&nbsp;&nbsp;&nbsp;p=1;
+		<br/>&nbsp;&nbsp;&nbsp;while (n!=0) {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p=p*(n%10);
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/10; }
+		<br/>&nbsp;&nbsp;&nbsp;cout&lt;&lt;s;
+		<br/>return 0; }
+		</div></p></td>
+	</tr>
+	</table>
+	<br/>
+	<table>
+	<tr>
+		<th><a name="ogl"></a><b>Oglinditul unui num&abreve;r. Num&abreve;r palindrom</b></th>
+	</tr>
+	</table><table>
+	<tr>
+		<td><p><b>Oglinditul unui num&abreve;r</b> este num&abreve;rul citit de la dreapta la st&acirc;nga.</p>
+		<br/>Se cite&scedil;te un num&abreve;r natural nenul n de maxim 9 cifre. Se cere s&abreve; se determine &scedil;i s&abreve; se afi&scedil;e oglinditul s&abreve;u. 
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a 2341.
+		<p><div id="code">
+		#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;long n, ogl;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+		<br/>&nbsp;&nbsp;&nbsp;ogl=0;
+		<br/>&nbsp;&nbsp;&nbsp;while (n!=0) {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ogl=ogl*10+n%10;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/10; }
+		<br/>&nbsp;&nbsp;&nbsp;cout&lt;&lt;ogl;
+		<br/>return 0; }
+		</div></p></td>
+		<td><p>Un num&abreve;r este <b>palindrom</b> dac&abreve; citit de la dreapta la st&acirc;nga este egal cu num&abreve;rul citit de la st&acirc;nga la dreapta (exemple: 12321, 232, 4, 24342).
+		&Icirc;n alte cuvinte, dac&abreve; un num&abreve;r este egal cu oglinditul s&abreve;u, acesta este palindrom.</p>
+		<br/>Se cite&scedil;te un num&abreve;r natural nenul n de maxim 9 cifre. Se cere s&abreve; se scrie pe ecran "da", dac&abreve; num&abreve;rul este palindrom &scedil;i "nu" &icirc;n caz contrar.
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a "nu".
+		<p><div id="code">
+		#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;long n, ogl, aux;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+		<br/>&nbsp;&nbsp;&nbsp;ogl=0;
+		<br/>&nbsp;&nbsp;&nbsp;aux=n;
+		<br/>&nbsp;&nbsp;&nbsp;while (n!=0) {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ogl=ogl*10+n%10;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/10; }
+		<br/>&nbsp;&nbsp;&nbsp;if (aux==ogl) cout&lt;&lt;"da";
+		<br/>&nbsp;&nbsp;&nbsp;else cout&lt;&lt;"nu";
+		<br/>return 0; }
+		</div></p></td>
+	</tr>
+	</table>
+	<br/>
+	<table>
+	<tr>
+		<th ><a name="constr"></a><b>Construc&tcedil;ii de numere</b></th>
+	</table>
+	<table>
+	</tr>
+		<tr>
+		<td>Se cite&scedil;te un num&abreve;r natural nenul n de maxim 9 cifre. Se cere s&abreve; construiasc&abreve; &icirc;n variabila x num&abreve;rul alc&abreve;tuit din cifrele sale impare, privite de la dreapta la st&acirc;nga. 
+		Dac&abreve; num&abreve;rul nu are cifre impare, se va afi&scedil;a un mesaj corespunz&abreve;tor.
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a 31.
+		<p><div id="code">
+		<br/>#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;long n, x=0;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+		<br/>&nbsp;&nbsp;&nbsp;do {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (n%2==1) x=x*10+n%10;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/10; }
+		<br/>&nbsp;&nbsp;&nbsp;while (n!=0);
+		<br/>&nbsp;&nbsp;&nbsp;if (x!=0) cout&lt;&lt;x;
+		<br/>&nbsp;&nbsp;&nbsp;else cout&lt;&lt;"nu exista cifre impare";
+		<br/>&nbsp;&nbsp;&nbsp;//<i>daca x ramane 0, atunci nu au existat cifre impare</i>
+		<br/>return 0; }
+		</div></p></td>
+		<td>Se cite&scedil;te un num&abreve;r natural nenul n de maxim 9 cifre. Se cere s&abreve; construiasc&abreve; &icirc;n variabila x num&abreve;rul alc&abreve;tuit din cifrele sale pare, privite de la st&acirc;nga la dreapta. 
+		Daca num&abreve;rul nu are cifre pare, se va afi&scedil;a un mesaj corespunz&abreve;tor.
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a 42.
+		<p><div id="code">
+		#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;long n, x=0, p=1;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>n;
+		<br/>&nbsp;&nbsp;&nbsp;do {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (n%2==0) {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x=x+n%10*p;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p=p*10; }
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n/10; }
+		<br/>&nbsp;&nbsp;&nbsp;while (n!=0);
+		<br/>&nbsp;&nbsp;&nbsp;if (p!=1) cout&lt;&lt;x;
+		<br/>&nbsp;&nbsp;&nbsp;else cout&lt;&lt;"nu exista cifre pare";
+		<br/>&nbsp;&nbsp;&nbsp;//<i>exista posibilitatea ca singura cifra par&abreve; a num&abreve;rului citit sa fie 0, caz &icirc;n care x are valoarea 0, &icirc;nsa p se schimba</i>
+		<br/>return 0; }
+		</div></p></td>
+	</tr></table>
+	
+</div>
+
+</body>
+
+</html>
+

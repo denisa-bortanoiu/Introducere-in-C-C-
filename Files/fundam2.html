@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>C.m.m.d.c.</title>
+<link rel="stylesheet" type="text/css" href="css/fundam.css">
+</head>
+
+<body>
+
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center">Algoritmi fundamentali</h1>
+	<ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="fundam1.html">Operarea pe cifre</a></li>
+		<li><a href="fundam3.html">Divizorii unui numar</a></li>
+		<li><a href="fundam2.html"><b>C.m.m.d.c.</b></a></li>
+		<li><a href="fundam4.html">Exerci&tcedil;ii</a></li>
+	</ul>
+</div>
+</div>
+
+<div id="text">
+	Cel mai mare divizor comun al numerelor a &scedil;i b(<b>c.m.m.d.c.(a, b)</b>) poate fi determinat folosind algoritmul lui Euclid:
+	<ol>
+		<li>Se citesc numerele <b>a</b> &scedil;i <b>b</b>.</li>
+		<li>Se calculeaz&abreve; restul &icirc;mp&abreve;r&tcedil;irii lui <b>a</b> la <b>b</b>.</li>
+		<li>C&acirc;t timp restul este nenul, <b>a</b> ia valoarea lui <b>b, b</b> valoarea restului &scedil;i se calculeaz&abreve; din nou restul &icirc;mp&abreve;r&tcedil;irii lui <b>a</b> la <b>b</b>.</li>
+		<li>La finalul repeti&tcedil;iei, ultimul rest nenul (<b>b</b>) este <b>c.m.m.d.c(a, b)</b>.</li>
+	</ol>
+	Se citessc dou&abreve; numere a, b, de maxim patru cifre. Se cere s&abreve; se determine &scedil;i s&abreve; se afiseze c.m.m.d.c.(a,b). 
+		<br/><b>Exemplu:</b> pentru n=1342, se va afi&scedil;a 4.
+		<p><div id="code">
+		#include&lt;iostream.h>
+		<br/>int main () {
+		<br/>&nbsp;&nbsp;&nbsp;int a, b, r;
+		<br/>&nbsp;&nbsp;&nbsp;cin>>a>>b;
+		<br/>&nbsp;&nbsp;&nbsp;r=a%b;
+		<br/>&nbsp;&nbsp;&nbsp;while (r!=0) {
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=b;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b=r;
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r=a%b; }
+		<br/>&nbsp;&nbsp;&nbsp;cout&lt;&lt;b;
+		<br/>return 0; }
+		</div></p>
+	<b><a href="#">Observa&tcedil;ii!</a></b>
+	<ol>
+		<li>dou&abreve; numere se numesc prime &icirc;ntre ele dac&abreve; <b>c.m.m.d.c.(a, b)=1.</b></li>
+		<li>c.m.m.d.c. pe un &scedil;ir de numere a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>...a<sub>n</sub> este calculat ca 
+		<br/><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.m.m.d.c.(c.m.m.d.c(a<sub>k-2</sub>, a<sub>k-1</sub>), a<sub>k</sub>) </b> unde k&isin;{3, 4, ..., n}.</li>
+		<li>cel mai mare multiplu comun a dou&abreve; numere <b>a</b> &scedil;i <b>b</b> este dat de formula 
+		<br/><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a*b)/c.m.m.d.c.(a, b)</b>
+		<br/>&Icirc;n implementare, <i>se salveaz&abreve; valorile ini&tcedil;iale ale variabilelor </i><b>a</b> &scedil;i <b>b</b> &icirc;n variabile auxiliare! (procesul de determinare a c.m.m.d.c(a,b)
+		schimb&abreve; valorile celor dou&abreve; variabile)
+		</li>
+	</b></ol>
+	<br/>
+
+</body>
+
+</html>
+

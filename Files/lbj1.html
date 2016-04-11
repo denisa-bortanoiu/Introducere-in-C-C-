@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Date &scedil;i operatori</title>
+<link rel="stylesheet" type="text/css" href="css/lbj.css">
+</head>
+
+<body>
+	
+<div id="navi">
+    <div class="box" id="banner">
+		<h1 align="center"><a name="meniu"></a>Limbajul de programare C/C++</h1>
+    <ul id="menu">
+		<li><a href="index.html">Acas&abreve;</a></li>
+		<li><a href="lbj1.html"><b>Date &scedil;i operatori</b></a></li>
+		<li><a href="lbj3.html">Instruc&tcedil;iuni &scedil;i structuri</a></li>
+		<li><a href="lbj2.html">Structura programului</a></li>
+	</ul>
+	<ul id="menu2">
+		<li><a href="#ct">Constante</a></li>
+		<li><a href="#var">Variabile</a></li>
+		<li><a href="#op">Operatori</a></li>
+		<li><a href="#expr">Expresii</a></li>
+	</ul>
+	</div>
+</div>
+
+<div id="text">
+	<br/>Dup&abreve; cum am stabilit &icirc;n capitolul <a href="alg2.html"><b>Algoritmi</b></a>, datele sunt de douabreve; tipuri: <i>constante</i>
+	&scedil;i <i>variabile</i>. Orice databreve; are un <b>identificator</b>, adicabreve; un nume asociat acesteia, care poate con&tcedil;ine numai litere, cifre &scedil;i 
+	caracterul special <b>_</b> (liniu&tcedil;a de subliniere), primul caracter fiind obligatoriu o literabreve; sau liniu&tcedil;a de subliniere.
+	<br><b>Observa&tcedil;ie!</b> Limbajul C/C++ face distinc&tcedil;ie &icirc;ntre literele mari &scedil;i mici din identificatori! (<b>Min</b> &scedil;i <b>min</b> sunt identificatori diferi&tcedil;i)
+	
+	<p><a name="ct"><b>Constante</b></a>
+	<br/>Constantele sunt valori care nu se modificabreve; &icirc;n timpul programului.
+	<br/>Limbajul C/C++ permite exprimarea <b>constantelor &icirc;ntregi</b> &icirc;n sistem zecimal (succesiuni de cifre zecimale; ex: 20034), octal (succesiuni de cifre octale precedate de 0; ex: 034) sau hexazecimal
+	(succesiuni de cifre hexazecimale precedate de 0x sau 0X; ex: 0xFF11). 
+	<br/><b>Constantele reale</b> pot fi specificate &icirc;n nota&tcedil;ia uzualabreve; (cuprind partea &icirc;ntreagabreve; &scedil;i partea zecimal&abreve;, separate
+	de caracterul .(punct) pentru specificarea pozi&tcedil;iei virgulei zecimale; ex: -7.45) sau &icirc;n format exponen&tcedil;ial (ex: 3.2e-1, 1.E+2; valoarea num&abreve;rului se ob&tcedil;ine &icirc;nmul&tcedil;ind construc&tcedil;ia din fa&tcedil;a literei e/E cu 10 la puterea specificat&abreve;
+	de exponent).
+	<br/><b>Constantele caracter</b> sunt fie un singur caracter cuprins &icirc;ntre dou&abreve; caratere apostrof (ex: 'e', '2'), fie o secven&tcedil;&abreve; de evitare cuprins&abreve; &icirc;ntre dou&abreve; 
+	caractere apostrof. O secven&tcedil;a de evitare &icirc;ncepe cu simbolul \ (ex: '\b' caracterul backspace; '\n' caracterul newline - determina trecerea cursorului pe linia urm&abreve;toare, echivalent cu endl; 
+	'\a' caracterul alarm - genereaz&abreve; un sunet; '\\' caracterul backslash, '\' ' caracterul apostrof, '\" ' caracterul ghilimele)
+	<br/><b>Constantele &scedil;ir de caractere</b> sunt constituite dintr-o succesiune de caractere &icirc;ncadrat&abreve; &icirc;ntre ghilimele. Sunt reprezentate intern prin codurile ASCII ale
+	caracterelor &scedil;i terminate cu '\0'(terminatorul &scedil;irurilor de caractere sau caracterul NULL).
+	<br/><b>O constant&abreve; simbolic&abreve;</b> este o constant&abreve; desemnat&abreve; printr-un identificator. Poate fi:
+	<ol><li><i> predefinit&abreve; </i>- se gasesc &icirc;n fi&scedil;iere antet care trebuie incluse &icirc;n program folosind directive <i>#include</i>
+	<br/>&nbsp; &nbsp; &nbsp; &nbsp; ex: M_PI cu valoarea 3.14159265358979323846 &icirc;n math.h (<i>#include&lt;math.h.></i></li>
+	<li><i> definit&abreve; de utilizator </i>- folosind construc&tcedil;ia <i>#define nume valoare</i>
+	<br/>&nbsp; &nbsp; &nbsp; &nbsp; ex: #define nr_pi 3.14;</li></ol>
+	</p>
+	
+	<p><a name="var"><b>Variabile</b></a>
+	<br/>Variabilele sunt date ale c&abreve;ror valori se pot modifica la fiecare execu&tcedil;ie a programului sau chiar &icirc;n timpul execu&tcedil;iei &scedil;i sunt caracterizate &icirc;n primul r&acirc;nd prin <b>tip.
+	Un tip de date</b> define&scedil;te mul&tcedil;imea valorilor pe care le pot lua datele de tipul respectiv, modul de reprezentare al acestora &icirc;n memorie, precum &scedil;i opera&tcedil;iile care se pot efectua
+	cu datele respective.
+	<table>
+	<tr><th>TIPURI &Icirc;NTREGI</th></tr>
+	</table>
+	<table>
+		<tr><th>Tip</th><th>Mul&tcedil;imea valorilor</th><th>Lungimea reprezent&abreve;ii &icirc;n memorie</th><th>Semnifica&tcedil;ie</th></tr>
+		<tr><td>char</td><td>[-128, 127]</td><td>1 octet</td><td>caracter</td></tr>
+		<tr><td>int</td><td>[-32768, 3276])</td><td>4 octe&tcedil;i</td><td>num&abreve;r &icirc;ntreg (de maxim 4 cifre)</td></tr>
+		<tr><td>unsigned int</td><td>[0, 32767]</td><td>4 octe&tcedil;i</td><td>num&abreve;r &icirc;ntreg pozitiv (de maxim 4 cifre)</td></tr>
+		<tr><td>long</td><td>[-2147483648, 2147483647]</td><td>8 octe&tcedil;i</td><td>num&abreve;r &icirc;ntreg (de maxim 9 cifre)</td></tr>
+		<tr><td>unsigned long</td><td>[0, 2147483647]</td><td>8 octe&tcedil;i</td><td>num&abreve;r &icirc;ntreg pozitiv (de maxim 9 cifre)</td></tr>
+	</table>
+	<br/>
+	<table>
+	<tr><th><b>TIPURI REALE</b></th></tr>
+	</table><table>
+		<tr><th>Tip</th><th>Mul&tcedil;imea valorilor</th><th>Lungimea reprezent&abreve;rii &icirc;n memorie</th></tr>
+		<tr><td>float</td><td>[-3.4*10<sup>38</sup>, 3.4*10<sup>38</sup>]</td><td>4 octe&tcedil;i</td></tr>
+		<tr><td>double</td><td>[-1.7*10<sup>308</sup>, 1.7*10<sup>308</sup>]</td><td>8 octe&tcedil;i</td></tr>
+		<tr><td>long double</td><td>[-1.1*10<sup>4932</sup>, -1.1*10<sup>4932</sup>]</td><td>12 octe&tcedil;i</td></tr>
+	</table>
+	<br/><i>Declararea unei variabile</i> 
+	<br/> &nbsp; &nbsp; &nbsp; <b> tip nume[=valoare];
+	<br/>Observa&tcedil;ie!</b> Se pot declara mai multe variabile de acela&scedil;i tip, separ&acirc;nd numele lor prin virgul&abreve;.
+	<br/>Ex: int n, m=10; float x;<br/>
+	<p><a name="op"><b>Operatori</b></a>
+	<br/>&Icirc;n limbajul C/C++ exist&abreve; diverse tipuri de operatori:
+	<table>
+	<tr><th>Aritmetici</th><th>Rela&tcedil;ionali</th><th>Logici</th><th>De atribuire</th><th>Unari</th></tr>
+	<tr><td> <b>+</b> (adunare) <br/> <b>-</b> (sc&abreve;dere)<br/> <b>*</b> (&icirc;nmul&tcedil;ire) <br/> <b>/</b> (&icirc;mp&abreve;r&tcedil;ire real&abreve; dac&abreve; cel pu&tcedil;in un operand este real) <br/> <b>/</b> (&icirc;mp&abreve;r&tcedil;ire &icirc;ntreag&abreve; dac&abreve; ambii operanzi sunt &icirc;ntregi) <br/> <b>%</b> (restul &icirc;mp&abreve;r&tcedil;irii &icirc;ntregi)</td>
+	<td> <b>&lt;</b> (mai mic) <br/> <b>></b> (mai mare) <br/> <b>&lt;=</b> (mai mic sau egal) <br/> <b>=</b> (mai mare sau egal) <br/> <b>==</b> (egal) <br/> <b> != </b>(diferit) </td>
+	<td> <b>!</b> (nega&tcedil;ie logic&abreve;) <br/> <b>&&</b> (&scedil;i logic) <br/> <b>||</b> (sau logic) </td>
+	<td> <b>=</b> (atribuire simpl&abreve;) <br/> <b>*=, /=, %=, +=, -= </b>(atribuire <b>a'opera&tcedil;ie'=b</b> echivalent&abreve; cu <b>a=a'opera&tcedil;ie'b</b>) </td>
+	<td> <b>++ (a++=a+1) <br/> -- (a--=a-1)</b></td></tr></table> <br/>
+	<a name="expr"><b>Expresii</b></a>
+	<br/>O expresie con&tcedil;ine operanzi (constante, variabile, func&tcedil;ii) lega&tcedil;i prin operatori specifici limbajului. C&acirc;nd se evalueaz&abreve; o expresie se &tcedil;ine cont de prioritatea 
+	operatorilor &scedil;i de asociativitate. &Icirc;n general, asociativitatea se face de la st&acirc;nga la dreapta. &Icirc;n C/C++, operatorii pot fi &icirc;mp&abreve;rti&tcedil;i &icirc;n urm&abreve;toarele grupe &icirc;n ordinea descresc&abreve;toare a priorit&abreve;&tcedil;ii lor:
+	<ol>
+		<li>!, ++, --<</li>
+		<li>*, /, %</li>
+		<li>+, - </li>
+		<li>>, &lt;, >=, &lt;=</li>
+		<li>==, !=</li>
+		<li>&&</li>
+		<li>|| </li>
+		<li>=, *=, /=, %=, +=, -=</li>
+	</ol>
+	<br/>Exemple de expresii:
+	<ol>
+		<li>a%2==0 (verific&abreve; dac&abreve; a este par; <i>o expresie are valoarea 1 dac&abreve; e adevarat&abreve; &scedil;i 0 &icirc;n caz contrar</i>)</li>
+		<li>a==i++ (se verifica dac&abreve; a==i &scedil;i apoi se cre&scedil;te valoarea lui i cu o unitate)</li>
+		<li>a==++i (se cre&scedil;te valoarea lui i cu 1 &scedil;i apoi se evalueaz&abreve; expresia)</li>
+	</ol>
+	<br/><b>Instruc&tcedil;iunea expresie</b> are sintaxa: <i>expresie;</i>.
+	<br/>Ex: 
+	<ol>
+		<li>m=n=p=10; (m, n &scedil;i p primesc valoarea 10; <i>este permis&abreve; atribuirea multipl&abreve;, dar nu la declarare</i>)</li>
+		<li>s*=3; (s ia valoarea s*3)</li>
+		<li>a--; (se scade cu 1 valoarea lui a)</li>
+	</ol>
+<br/>
+</div>
+</body>
+</html>
